@@ -192,24 +192,6 @@
       .gtm-rule { margin-top: 24px; display: flex; gap: 12px; align-items: center; color: var(--purple-deep); font-weight: 700; font-size: clamp(11px,.9vw,16px); }
       .gtm-rule::before { content: ""; width: 36px; height: 4px; border-radius: 99px; background: var(--mint); }
 
-      .scoreboard { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 14px; margin-top: clamp(22px,3vh,38px); }
-      .metric { padding: clamp(18px,1.8vw,28px); border: 1px solid var(--line); border-radius: 22px; background: white; }
-      .metric-top { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
-      .target { display: inline-flex; padding: 5px 8px; border-radius: 7px; background: #ece8ff; color: var(--purple-deep); font-size: 9px; letter-spacing: .12em; font-weight: 800; }
-      .metric-value { font-size: clamp(31px,3vw,52px); font-weight: 800; letter-spacing: -.06em; color: var(--metric-color,var(--purple)); }
-      .metric p { margin-top: 8px; font-size: clamp(11px,.78vw,14px); }
-      .proof-note { margin-top: 16px; font-size: clamp(10px,.75vw,13px); color: var(--muted); }
-
-      .roadmap { display: grid; grid-template-columns: repeat(6,minmax(0,1fr)); gap: 10px; margin-top: clamp(24px,3vh,40px); align-items: stretch; }
-      .phase { position: relative; padding: 18px 14px; min-height: 250px; border-radius: 20px; background: white; border: 1px solid var(--line); }
-      .phase::after { content: ""; position: absolute; top: 26px; right: -11px; width: 12px; height: 2px; background: var(--purple); }
-      .phase:last-child::after { display: none; }
-      .phase .phase-no { width: 28px; height: 28px; display: grid; place-items: center; border-radius: 9px; background: var(--phase-color,var(--purple)); color: white; font-size: 11px; font-weight: 800; }
-      .phase time { display: block; margin-top: 16px; color: var(--purple-deep); font-size: clamp(9px,.66vw,11px); font-weight: 700; line-height: 1.35; }
-      .phase h3 { margin-top: 9px; font-size: clamp(13px,1vw,17px); }
-      .phase p { margin-top: 10px; font-size: clamp(10px,.72vw,13px); line-height: 1.45; }
-      .gate { display: inline-block; margin-top: 12px; color: #137c5a; font-weight: 800; font-size: 10px; }
-
       .decision-box { padding: clamp(24px,3vw,44px); border-radius: 28px; background: var(--purple); color: white; box-shadow: 0 30px 65px rgba(73,56,187,.28); }
       .decision-box h3 { font-size: clamp(22px,2.25vw,36px); }
       .decision-box p { color: rgba(255,255,255,.76); margin-top: 10px; }
@@ -254,8 +236,6 @@
         .card { padding: 18px; }
         .step { min-height: 150px; padding: 16px; }
         .step-num { margin-bottom: 12px; }
-        .roadmap { gap: 7px; }
-        .phase { min-height: 205px; padding: 12px 10px; }
         .position-cell { padding: 18px; }
       }
 
@@ -265,11 +245,9 @@
         .cover .content > div:first-child { z-index: 2; }
         .quote-stack { grid-template-columns: 1fr 1fr; }
         .phone { width: 220px; position: absolute; right: 3vw; bottom: 8vh; opacity: .23; }
-        .grid-3, .scoreboard { grid-template-columns: repeat(2,1fr); }
+        .grid-3 { grid-template-columns: repeat(2,1fr); }
         .steps { grid-template-columns: repeat(2,1fr); }
         .step::after { display: none; }
-        .roadmap { grid-template-columns: repeat(3,1fr); }
-        .phase { min-height: 150px; }
         .audience-ring { display: none; }
         .builder-photo-card { position: absolute; right: 4vw; bottom: 8vh; width: 35vw; height: 52vh; opacity: .22; }
       }
@@ -291,20 +269,20 @@
         h3 { font-size: 16px; }
         p, .lede { font-size: 12px; line-height: 1.45; }
         .lede { margin-top: 12px; }
-        .grid, .pill-row, .position-strip, .gtm-loop, .scoreboard, .roadmap { margin-top: 14px; }
-        .grid-2, .grid-3, .steps, .position-strip, .gtm-loop, .scoreboard, .roadmap, .ask-cards, .builder-proof {
+        .grid, .pill-row, .position-strip, .gtm-loop { margin-top: 14px; }
+        .grid-2, .grid-3, .steps, .position-strip, .gtm-loop, .ask-cards, .builder-proof {
           grid-template-columns: minmax(0, 1fr);
         }
         .quote-stack { grid-template-columns: minmax(0, 1fr); }
         .quote-card:nth-child(2) { margin-left: 0; }
         .position-cell { border-right: 0; border-bottom: 1px solid var(--line); }
         .position-cell:last-child { border-bottom: 0; }
-        .step, .phase, .ask-card { min-height: 0; }
-        .step::after, .phase::after, .gtm-node:not(:last-child)::after { display: none; }
+        .step, .ask-card { min-height: 0; }
+        .step::after, .gtm-node:not(:last-child)::after { display: none; }
         .gtm-node { min-height: 150px; }
         .qr-card { grid-template-columns: minmax(0, 1fr); }
         .qr-card > img { width: 96px; height: 96px; }
-        .validation-note, .proof-note, .gtm-rule { margin-top: 12px; }
+        .validation-note, .gtm-rule { margin-top: 12px; }
         .hero-art, .phone, .builder-photo-card { display: none; }
         .controls { right: 12px; bottom: 10px; }
         .controls button { width: 38px; height: 38px; }
@@ -357,7 +335,7 @@
             </svg>
           </div>
         </div>
-        <footer class="slide-foot"><span>More wonder for children. More meaningful reading time for families.</span><strong>01 / 12</strong></footer>
+        <footer class="slide-foot"><span>More wonder for children. More meaningful reading time for families.</span><strong>01 / 10</strong></footer>
       </section>
 
       <section class="slide" data-slide="2" aria-label="Problem slide">
@@ -370,7 +348,7 @@
             <div class="quote-card"><strong>“Vietnamese should feel native.”</strong><span>The local gap: voice, stories, and onboarding made for Vietnamese families.</span></div>
           </div>
         </div>
-        <footer class="slide-foot"><span>Problem framing from the GTM and brand foundation documents.</span><strong>02 / 12</strong></footer>
+        <footer class="slide-foot"><span>Problem framing from the GTM and brand foundation documents.</span><strong>02 / 10</strong></footer>
       </section>
 
       <section class="slide" data-slide="3" aria-label="Solution slide">
@@ -381,7 +359,7 @@
           </div>
           <div><div class="section-label">A bridge, not a replacement</div><h2>Paper book in hand. <span class="purple">Magic on top.</span></h2><p class="lede">Point the camera at a page. Mọt Nhí adds characters, sound, and Vietnamese read-aloud while the child controls the pace and the parent stays present.</p><div class="grid grid-2"><div class="card" style="--accent:var(--purple)"><h3>Interaction with purpose</h3><p>AR rewards attention to the physical page instead of pulling the child into an endless feed.</p></div><div class="card" style="--accent:var(--mint)"><h3>Designed for completion</h3><p>Each story has a clear beginning and end, creating a measurable first-value moment.</p></div></div></div>
         </div>
-        <footer class="slide-foot"><span>Product concept · one polished story in v0.1 Alpha.</span><strong>03 / 12</strong></footer>
+        <footer class="slide-foot"><span>Product concept · one polished story in v0.1 Alpha.</span><strong>03 / 10</strong></footer>
       </section>
 
       <section class="slide" data-slide="4" aria-label="Product journey slide">
@@ -392,7 +370,7 @@
           <article class="step" style="--step-color:#d4a21e"><div class="step-num">03</div><h3>Explore together</h3><p>AR characters and Vietnamese voice reward curiosity without replacing the book.</p></article>
           <article class="step" style="--step-color:#169b70"><div class="step-num">04</div><h3>Finish the story</h3><p>The canonical activation event is <strong>“completed first story”.</strong></p></article>
         </div></div>
-        <footer class="slide-foot"><span>Every growth decision starts with this measurable journey.</span><strong>04 / 12</strong></footer>
+        <footer class="slide-foot"><span>Every growth decision starts with this measurable journey.</span><strong>04 / 10</strong></footer>
       </section>
 
       <section class="slide" data-slide="5" aria-label="Positioning slide">
@@ -402,7 +380,7 @@
           <article class="position-cell"><span class="mini">Add</span><h3>AR + Vietnamese voice</h3><p>Characters, sound, and read-aloud make the moment more accessible and locally resonant.</p></article>
           <article class="position-cell"><span class="mini">Protect</span><h3>The family ritual</h3><p>Finite stories, child-led pacing, and parent involvement create healthier screen time by design.</p></article>
         </div><p class="lede">The category is not “another learning app.” Mọt Nhí is an interactive layer for the books families already want children to love.</p></div>
-        <footer class="slide-foot"><span>Core promise: more wonder; more meaningful reading time.</span><strong>05 / 12</strong></footer>
+        <footer class="slide-foot"><span>Core promise: more wonder; more meaningful reading time.</span><strong>05 / 10</strong></footer>
       </section>
 
       <section class="slide" data-slide="6" aria-label="Audience slide">
@@ -411,7 +389,7 @@
           <div><div class="section-label">Start narrow, learn fast</div><h2>Win one family moment before scaling the market.</h2><p class="lede"><strong>Primary ICP:</strong> urban Vietnamese parents aged 25–40 with children aged 3–8 who already buy books or learning products and want healthier screen time.</p><div class="grid grid-2"><div class="card" style="--accent:var(--purple)"><h3>Parent buyer</h3><p>Values shared reading, local-language content, and a clear boundary around screen use.</p></div><div class="card" style="--accent:var(--mint)"><h3>Child user</h3><p>Needs instant delight, simple interactions, and the freedom to progress at their own pace.</p></div></div></div>
           <div class="audience-ring" aria-label="Go-to-market audience rings"><div class="ring outer"><strong>Parent communities</strong><small>Trust + distribution</small></div><div class="ring middle"><strong>Preschools · bookstores · publishers</strong><small>Demos + partnerships</small></div><div class="ring inner"><strong>Families<br/>ages 3–8</strong><small>first wedge</small></div></div>
         </div>
-        <footer class="slide-foot"><span>Secondary audiences expand distribution only after family retention is proven.</span><strong>06 / 12</strong></footer>
+        <footer class="slide-foot"><span>Secondary audiences expand distribution only after family retention is proven.</span><strong>06 / 10</strong></footer>
       </section>
 
       <section class="slide" data-slide="7" aria-label="Business model slide">
@@ -421,7 +399,7 @@
           <article class="card money-card" style="--accent:#d4a21e"><span class="model-no">2</span><span class="hypothesis">Hypothesis</span><h3>Story packs</h3><p>One-off or bundled story unlocks for families who prefer ownership over a recurring subscription.</p></article>
           <article class="card money-card" style="--accent:#169b70"><span class="model-no">3</span><span class="hypothesis">Hypothesis</span><h3>Partner programs</h3><p>Publisher, bookstore, and preschool packages that pair content, live demos, and family acquisition.</p></article>
         </div><div class="validation-note">Pricing is intentionally absent: the roadmap requires willingness-to-pay evidence before a model or price point is presented as fact.</div></div>
-        <footer class="slide-foot"><span>Decision rule: monetize the behavior families repeat—not the feature they merely try.</span><strong>07 / 12</strong></footer>
+        <footer class="slide-foot"><span>Decision rule: monetize the behavior families repeat—not the feature they merely try.</span><strong>07 / 10</strong></footer>
       </section>
 
       <section class="slide" data-slide="8" aria-label="Go-to-market slide">
@@ -432,36 +410,10 @@
           <article class="gtm-node" style="--node-bg:#daf8ea"><strong>Partner proof</strong><p>Two preschool, bookstore, or publisher pilots with QR demos.</p></article>
           <article class="gtm-node" style="--node-bg:#ffe1de"><strong>Referral loop</strong><p>Unlock bonus stories only after week-two retention is proven.</p></article>
         </div><div class="gtm-rule">Review weekly. After launch, double down on the two channels that produce activated and returning families—not the most views.</div></div>
-        <footer class="slide-foot"><span>Product Hunt, directories, and hackathons support launch visibility; they are not the core engine.</span><strong>08 / 12</strong></footer>
+        <footer class="slide-foot"><span>Product Hunt, directories, and hackathons support launch visibility; they are not the core engine.</span><strong>08 / 10</strong></footer>
       </section>
 
-      <section class="slide" data-slide="9" aria-label="Success metrics slide">
-        <header class="slide-head"><div class="brand"><img src="assets/logo-light.png" alt="Mọt Nhí" /></div><div class="section-label">Validation plan</div></header>
-        <div class="content"><div class="section-label">These are targets, not traction</div><h2>What must be true by <span class="purple">9 Nov 2026.</span></h2><div class="scoreboard">
-          <article class="metric"><div class="metric-top"><span class="metric-value">300</span><span class="target">TARGET</span></div><h3>Qualified waitlist</h3><p>Evidence that the promise earns attention from the right families.</p></article>
-          <article class="metric"><div class="metric-top"><span class="metric-value">100</span><span class="target">TARGET</span></div><h3>Trials</h3><p>Enough product exposure to study activation and retention.</p></article>
-          <article class="metric" style="--metric-color:var(--purple)"><div class="metric-top"><span class="metric-value">60%</span><span class="target">TARGET</span></div><h3>24h activation</h3><p>Complete the first story within one day of starting.</p></article>
-          <article class="metric" style="--metric-color:#169b70"><div class="metric-top"><span class="metric-value">30%</span><span class="target">TARGET</span></div><h3>Week-two return</h3><p>Families come back after the novelty window.</p></article>
-          <article class="metric" style="--metric-color:#d79c00"><div class="metric-top"><span class="metric-value">10%</span><span class="target">TARGET</span></div><h3>Trial-to-paid</h3><p>Or strong, documented willingness-to-pay evidence.</p></article>
-          <article class="metric" style="--metric-color:var(--coral)"><div class="metric-top"><span class="metric-value">10 + 2</span><span class="target">TARGET</span></div><h3>UGC + partners</h3><p>Ten usable testimonials and two active distribution partners.</p></article>
-        </div><p class="proof-note">Scale only if activation ≥60%, week-two return ≥30%, and trial-to-paid ≥10%. If any gate misses, fix the weakest step before increasing acquisition spend.</p></div>
-        <footer class="slide-foot"><span>Measurement-first roadmap · activation event: completed first story.</span><strong>09 / 12</strong></footer>
-      </section>
-
-      <section class="slide" data-slide="10" aria-label="Roadmap slide">
-        <header class="slide-head"><div class="brand"><img src="assets/logo-light.png" alt="Mọt Nhí" /></div><div class="section-label">Milestones</div></header>
-        <div class="content"><div class="section-label">84 days from foundation to scale decision</div><h2>Each release earns the <span class="purple">right to continue.</span></h2><div class="roadmap">
-          <article class="phase" style="--phase-color:#4938bb"><span class="phase-no">0</span><time>17–23 Aug</time><h3>Foundation</h3><p>Lock brand, landing copy, analytics, and the first measurable story.</p><span class="gate">GATE · measurable</span></article>
-          <article class="phase" style="--phase-color:#6c5ce7"><span class="phase-no">1</span><time>24–30 Aug</time><h3>v0.1 Alpha</h3><p>One polished story; stable AR, voice, onboarding, and completion tracking.</p><span class="gate">GATE · no critical bug</span></article>
-          <article class="phase" style="--phase-color:#ff7d73"><span class="phase-no">2</span><time>31 Aug–13 Sep</time><h3>Closed Beta</h3><p>20 parent testers, 10 interviews, and first-story friction removal.</p><span class="gate">GATE · 60% activation</span></article>
-          <article class="phase" style="--phase-color:#d4a21e"><span class="phase-no">3</span><time>14–27 Sep</time><h3>Partner Pilot</h3><p>50 families, two live demos, 10 UGC assets, and pricing validation.</p><span class="gate">GATE · 30% W2 return</span></article>
-          <article class="phase" style="--phase-color:#169b70"><span class="phase-no">4</span><time>28 Sep–11 Oct</time><h3>v1.0 Public</h3><p>Creator seeding, communities, launch listings, and 100 trials.</p><span class="gate">GATE · 10% paid</span></article>
-          <article class="phase" style="--phase-color:#211b35"><span class="phase-no">5</span><time>12 Oct–8 Nov</time><h3>Optimize</h3><p>Double down on two channels; improve library, retention, and pricing.</p><span class="gate">DECIDE · 9 Nov</span></article>
-        </div></div>
-        <footer class="slide-foot"><span>Dates and release gates from the proposed v1 roadmap, updated 17 Aug 2026.</span><strong>10 / 12</strong></footer>
-      </section>
-
-      <section class="slide" data-slide="11" aria-label="Builder slide">
+      <section class="slide" data-slide="9" aria-label="Builder slide">
         <header class="slide-head"><div class="brand"><img src="assets/logo-light.png" alt="Mọt Nhí" /></div><div class="section-label">Builder</div></header>
         <div class="content builder-layout">
           <div class="builder-photo-card">
@@ -482,22 +434,22 @@
             </a>
           </div>
         </div>
-        <footer class="slide-foot"><span>Public profile and technical work verified 21 Aug 2026.</span><strong>11 / 12</strong></footer>
+        <footer class="slide-foot"><span>Public profile and technical work verified 21 Aug 2026.</span><strong>09 / 10</strong></footer>
       </section>
 
-      <section class="slide" data-slide="12" aria-label="Ask slide">
+      <section class="slide" data-slide="10" aria-label="Ask slide">
         <header class="slide-head"><div class="brand"><img src="assets/logo-light.png" alt="Mọt Nhí" /></div><div class="section-label">Pilot ask</div></header>
         <div class="content ask-layout">
           <div class="decision-box"><div class="section-label" style="color:#dcd6ff">Help prove the first reading loop</div><h3>Build one story families choose to finish—and return to.</h3><p>This deck asks for learning access before asking for scale capital.</p><div class="decision-line"><span>✓</span>Observe real parent–child reading sessions</div><div class="decision-line"><span>✓</span>Run live book-to-AR partner demos</div><div class="decision-line"><span>✓</span>Validate retention and willingness to pay</div></div>
           <div><h2>We are inviting:</h2><div class="ask-cards"><article class="ask-card"><div class="big">20</div><h3>parent testers</h3><p>Families with children aged 3–8 for the closed beta.</p></article><article class="ask-card" style="--ask-color:#169b70"><div class="big">2</div><h3>pilot partners</h3><p>We need two pilot partners—preschools, bookstores, or publishers—ready to host a live demo.</p></article></div><div class="source-links"><a href="https://app.notion.com/p/GTM-plan-3b4ff178a0e4803f8b06ed54d52267f1" target="_blank" rel="noopener noreferrer">Source · GTM plan ↗</a><a href="https://app.notion.com/p/Brand-Foundation-Release-Roadmap-M-t-Nh-3bfff178a0e480faaa55e8ac9cb80548?pvs=13" target="_blank" rel="noopener noreferrer">Source · Brand &amp; release roadmap ↗</a></div></div>
         </div>
-        <footer class="slide-foot"><span>Next milestone: v0.2 Closed Beta · 31 Aug–13 Sep 2026.</span><strong>12 / 12</strong></footer>
+        <footer class="slide-foot"><span>Next milestone: v0.2 Closed Beta · 31 Aug–13 Sep 2026.</span><strong>10 / 10</strong></footer>
       </section>
     </main>
 
     <div class="progress" aria-hidden="true"><span class="progress-bar"></span></div>
     <div class="controls" aria-label="Slide controls"><button type="button" class="prev" aria-label="Previous slide">←</button><button type="button" class="next" aria-label="Next slide">→</button></div>
-    <div id="slide-status" class="sr-only" aria-live="polite" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">Slide 1 of 12</div>
+    <div id="slide-status" class="sr-only" aria-live="polite" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">Slide 1 of 10</div>
 
     <script>
       (() => {

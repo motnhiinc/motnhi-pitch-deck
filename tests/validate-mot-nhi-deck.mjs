@@ -46,8 +46,19 @@ for (const reference of new Set(localAssetReferences)) {
 }
 
 const slides = html.match(/<section\b[^>]*class="[^"]*\bslide\b[^"]*"/g) ?? [];
-assert.equal(slides.length, 12, 'deck must contain exactly 12 slides');
+assert.equal(slides.length, 10, 'deck must contain exactly 10 slides');
+assert.deepEqual(
+  [...html.matchAll(/<section\b[^>]*class="[^"]*\bslide\b[^"]*"[^>]*data-slide="(\d+)"/g)].map((match) => Number(match[1])),
+  Array.from({ length: 10 }, (_, index) => index + 1),
+  'data-slide values must be consecutive',
+);
+assert.deepEqual(
+  [...html.matchAll(/<strong>(\d{2}) \/ 10<\/strong>/g)].map((match) => Number(match[1])),
+  Array.from({ length: 10 }, (_, index) => index + 1),
+  'visible slide counters must be consecutive and use the 10-slide total',
+);
 
+const visibleText = html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ');
 for (const phrase of [
   'Mọt Nhí',
   'Chạm vào trang sách, bước vào câu chuyện.',
@@ -56,25 +67,23 @@ for (const phrase of [
   '20 parent testers',
   'two pilot partners',
 ]) {
-  assert.ok(html.includes(phrase), `missing canonical fact: ${phrase}`);
+  assert.ok(visibleText.includes(phrase), `missing canonical fact: ${phrase}`);
 }
 
 assert.ok(!/Mermail/i.test(html), 'deck must not contain legacy Mermail content');
 assert.ok(html.includes('Pre-launch pitch deck'), 'cover must frame the asset as a pre-launch pitch deck');
 assert.ok(!/Partner &amp; investor deck/i.test(html), 'cover must not use ambiguous partner/investor framing');
-for (const section of ['Problem', 'Solution', 'Product demo', 'Differentiation', 'Market wedge', 'Business model', 'Go-to-market', 'Validation plan', 'Milestones', 'Builder', 'Pilot ask']) {
+for (const section of ['Problem', 'Solution', 'Product demo', 'Differentiation', 'Market wedge', 'Business model', 'Go-to-market', 'Builder', 'Pilot ask']) {
   assert.ok(html.includes(`>${section}<`), `missing investor-facing section label: ${section}`);
 }
-assert.equal((html.match(/src="assets\/logo-light\.png"/g) ?? []).length, 12, 'every slide must use logo-light.png');
+assert.ok(!html.includes('aria-label="Success metrics slide"'), 'removed validation-plan slide must stay absent');
+assert.ok(!html.includes('aria-label="Roadmap slide"'), 'removed milestones slide must stay absent');
+assert.ok(html.includes('>Slide 1 of 10<'), 'screen-reader fallback must use the 10-slide total');
+assert.equal((html.match(/src="assets\/logo-light\.png"/g) ?? []).length, 10, 'every slide must use logo-light.png');
 assert.ok(!html.includes('<use href="#mot-mark"'), 'legacy inline logo mark must not be used');
 assert.ok(html.includes('src="assets/toan.jpg"'), 'builder slide must use the supplied portrait');
 assert.ok(html.includes('src="assets/toan-linkedin-qr.png"'), 'builder slide must include the generated QR code');
 assert.ok(html.includes('href="https://www.linkedin.com/in/toannhu"'), 'builder QR and CTA must point to the verified public profile');
-const visibleText = html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ');
-assert.ok(/60% TARGET/i.test(visibleText), 'activation metric must be labeled as a target');
-assert.ok(/30% TARGET/i.test(visibleText), 'retention metric must be labeled as a target');
-assert.ok(/10% TARGET/i.test(visibleText), 'conversion metric must be labeled as a target');
-
 assert.match(html, /aria-label="Previous slide"/);
 assert.match(html, /aria-label="Next slide"/);
 assert.match(html, /aria-live="polite"/);

@@ -44,7 +44,7 @@ for (const missingAsset of requiredAssets) {
 const scripts = [...deckHtml.matchAll(/<script>([\s\S]*?)<\/script>/g)].map((match) => match[1]);
 assert.equal(scripts.length, 1, 'deck must expose one interaction script for navigation testing');
 
-const slides = Array.from({ length: 12 }, (_, index) => ({
+const slides = Array.from({ length: 10 }, (_, index) => ({
   active: index === 0,
   classList: { toggle: (_name, state) => { slides[index].active = state; } },
   getAttribute: () => `Slide ${index + 1}`,
@@ -72,10 +72,10 @@ assert.equal(slides.filter((slide) => slide.active).length, 1, 'navigation must 
 const mobileStart = deckHtml.indexOf('@media (max-width: 640px)');
 const mobileEnd = deckHtml.indexOf('@media (prefers-reduced-motion', mobileStart);
 const mobileCss = mobileStart >= 0 && mobileEnd > mobileStart ? deckHtml.slice(mobileStart, mobileEnd) : '';
-for (const selector of ['.position-strip', '.gtm-loop', '.scoreboard', '.roadmap', '.ask-cards']) {
+for (const selector of ['.position-strip', '.gtm-loop', '.ask-cards']) {
   assert.ok(mobileCss.includes(selector), `mobile breakpoint must handle ${selector}`);
 }
-for (const selector of ['.step::after', '.phase::after', '.gtm-node:not(:last-child)::after', '.qr-card']) {
+for (const selector of ['.step::after', '.gtm-node:not(:last-child)::after', '.qr-card']) {
   assert.ok(mobileCss.includes(selector), `mobile breakpoint must neutralize desktop overflow for ${selector}`);
 }
 

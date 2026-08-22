@@ -26,7 +26,7 @@ Tokens are defined in the HTML `:root` block:
 - Yellow: `#ffd166`; mint: `#5ed6a6`; coral: `#ff7d73`
 - Font: Be Vietnam Pro with system sans-serif fallbacks
 
-## Slides (12 total)
+## Slides (10 total)
 
 1. Cover — product promise and pre-launch framing
 2. Problem — screens win attention
@@ -36,10 +36,8 @@ Tokens are defined in the HTML `:root` block:
 6. Market wedge — initial parent and child audience
 7. Business model — revenue paths to validate
 8. Go-to-market — six-week learning loop
-9. Validation plan — targets, not traction
-10. Milestones — roadmap to the scale decision
-11. Builder — Toan Nhu, Product & Engineering
-12. Pilot ask — 20 parent testers and two pilot partners
+9. Builder — Toan Nhu, Product & Engineering
+10. Pilot ask — 20 parent testers and two pilot partners
 
 ## Key conventions
 
@@ -61,4 +59,3 @@ Run both checks after deck or asset changes:
 node tests/validate-mot-nhi-deck.mjs
 node tests/validate-regressions.mjs
 ```
-

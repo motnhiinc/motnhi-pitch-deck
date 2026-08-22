@@ -28,7 +28,7 @@ Serve the repository root with any static file server, then open `mot-nhi-pitch-
 python3 -m http.server 8000
 ```
 
-## Slide structure (12 slides)
+## Slide structure (10 slides)
 
 1. **Cover** — Product promise and pre-launch framing.
 2. **Problem** — Screens win attention while story time struggles.
@@ -38,10 +38,8 @@ python3 -m http.server 8000
 6. **Market wedge** — Initial parent and child audience.
 7. **Business model** — Revenue paths to validate through pilots.
 8. **Go-to-market** — Six-week learning loop.
-9. **Validation plan** — Explicit targets, not achieved traction.
-10. **Milestones** — Release roadmap through the scale decision.
-11. **Builder** — Toan Nhu and relevant product-engineering experience.
-12. **Pilot ask** — 20 parent testers and two pilot partners.
+9. **Builder** — Toan Nhu and relevant product-engineering experience.
+10. **Pilot ask** — 20 parent testers and two pilot partners.
 
 ## Project conventions
 
@@ -58,4 +56,3 @@ python3 -m http.server 8000
 node tests/validate-mot-nhi-deck.mjs
 node tests/validate-regressions.mjs
 ```
-
