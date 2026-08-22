@@ -1,0 +1,103 @@
+name: Validate and deploy Mọt Nhí Pitch Deck
+
+on:
+  push:
+    branches:
+      - main
+      - master
+    paths:
+      - mot-nhi-pitch-deck.html
+      - tests/**
+      - docs/**
+      - .github/workflows/deploy-mot-nhi-pitch-deck.yml
+      - assets/**
+      - README.md
+      - AGENTS.md
+      - CLAUDE.md
+  pull_request:
+    branches:
+      - main
+      - master
+    paths:
+      - mot-nhi-pitch-deck.html
+      - tests/**
+      - docs/**
+      - .github/workflows/deploy-mot-nhi-pitch-deck.yml
+      - assets/**
+      - README.md
+      - AGENTS.md
+      - CLAUDE.md
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Setup Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 24
+
+      - name: Validate pitch deck
+        run: |
+          node tests/validate-mot-nhi-deck.mjs
+          node tests/validate-regressions.mjs
+
+  build:
+    if: github.event_name != 'pull_request'
+    needs: validate
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+      pages: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
+
+      - name: Build static site artifact
+        run: |
+          set -euo pipefail
+          install -d site
+          cp mot-nhi-pitch-deck.html site/index.html
+          cp mot-nhi-pitch-deck.html site/mot-nhi-pitch-deck.html
+          cp -R assets site/
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          path: site
+
+  deploy:
+    if: github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    concurrency:
+      group: pages
+      cancel-in-progress: false
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@cd2ce8fcbc39b97be8ca5fce6e763baed58fa128 # v5.0.0
