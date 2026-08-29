@@ -9,6 +9,8 @@ Interactive pitch deck for **Mọt Nhí**, an AR-powered shared-reading app for 
 | [mot-nhi-pitch-deck.html](mot-nhi-pitch-deck.html) | Canonical interactive HTML deck. |
 | [MOT-NHI-DECK-SOURCE-OF-TRUTH.md](docs/MOT-NHI-DECK-SOURCE-OF-TRUTH.md) | Approved product facts, validation targets, roadmap, builder profile, and primary sources. |
 | [assets/](assets/) | Logo, builder portrait, LinkedIn QR code, and generated deck previews. |
+| [robots.txt](robots.txt) | Search-crawler rules and sitemap discovery. |
+| [sitemap.xml](sitemap.xml) | Canonical production URL for search-engine discovery. |
 | [tests/validate-mot-nhi-deck.mjs](tests/validate-mot-nhi-deck.mjs) | Structural, content, link, and asset validation. |
 | [tests/validate-regressions.mjs](tests/validate-regressions.mjs) | Navigation and responsive-layout regression checks. |
 
@@ -21,6 +23,8 @@ The deck is a single HTML entry point, but it is **not** fully self-contained. K
 - [assets/toan-linkedin-qr.png](assets/toan-linkedin-qr.png)
 
 The deck also loads **Be Vietnam Pro** from Google Fonts. A system sans-serif fallback is used if the font cannot be reached.
+
+Production SEO and social previews use `https://pitching.motnhi.vn/` as the canonical URL and [assets/mot-nhi-og.png](assets/mot-nhi-og.png) as the 1200 × 630 Open Graph image.
 
 Serve the repository root with any static file server, then open `mot-nhi-pitch-deck.html`. For example:
 

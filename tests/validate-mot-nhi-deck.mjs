@@ -9,6 +9,12 @@ const deckPath = process.argv[2]
   : path.resolve(here, '..', 'mot-nhi-pitch-deck.html');
 const deckDirectory = path.dirname(deckPath);
 const html = await readFile(deckPath, 'utf8');
+const productionOrigin = 'https://pitching.motnhi.vn';
+const canonicalUrl = `${productionOrigin}/`;
+const socialImageUrl = `${productionOrigin}/assets/mot-nhi-og.png`;
+const pageTitle = 'Mọt Nhí | Pre-Launch Pitch Deck for AR Reading App';
+const pageDescription = 'Explore the Mọt Nhí pre-launch pitch deck for an AR reading app that adds Vietnamese read-aloud and playful characters to paper books for ages 3–8.';
+const socialDescription = 'A pre-launch investor deck for Mọt Nhí, the AR reading app that turns paper books into shared Vietnamese storytime for ages 3–8.';
 
 const localAssetReferences = [...html.matchAll(/\b(?:href|src)="([^"]+)"/g)]
   .map((match) => match[1])
@@ -91,6 +97,65 @@ assert.match(html, /prefers-reduced-motion/);
 assert.match(html, /@media print/);
 assert.match(html, /ArrowRight/);
 assert.match(html, /ArrowLeft/);
+
+for (const metadata of [
+  `<title>${pageTitle}</title>`,
+  `<meta name="description" content="${pageDescription}" />`,
+  `<link rel="canonical" href="${canonicalUrl}" />`,
+  '<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />',
+  '<meta property="og:type" content="website" />',
+  '<meta property="og:site_name" content="Mọt Nhí" />',
+  `<meta property="og:title" content="${pageTitle}" />`,
+  `<meta property="og:description" content="${socialDescription}" />`,
+  `<meta property="og:url" content="${canonicalUrl}" />`,
+  `<meta property="og:image" content="${socialImageUrl}" />`,
+  '<meta property="og:image:width" content="1200" />',
+  '<meta property="og:image:height" content="630" />',
+  '<meta property="og:image:alt"',
+  '<meta name="twitter:card" content="summary_large_image" />',
+  `<meta name="twitter:title" content="${pageTitle}" />`,
+  `<meta name="twitter:description" content="${socialDescription}" />`,
+  `<meta name="twitter:image" content="${socialImageUrl}" />`,
+  '<meta name="twitter:image:alt"',
+  '<script type="application/ld+json">',
+]) {
+  assert.ok(html.includes(metadata), `missing SEO metadata: ${metadata}`);
+}
+
+const jsonLdMatch = html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/);
+assert.ok(jsonLdMatch, 'deck must include JSON-LD structured data');
+const structuredData = JSON.parse(jsonLdMatch[1]);
+assert.equal(structuredData['@context'], 'https://schema.org');
+assert.ok(Array.isArray(structuredData['@graph']), 'JSON-LD must use an @graph');
+for (const type of ['WebSite', 'WebPage', 'SoftwareApplication']) {
+  assert.ok(structuredData['@graph'].some((node) => node['@type'] === type), `JSON-LD must include ${type}`);
+}
+const webPageNode = structuredData['@graph'].find((node) => node['@type'] === 'WebPage');
+assert.equal(webPageNode?.name, pageTitle, 'JSON-LD WebPage name must match the page title');
+assert.equal(webPageNode?.description, pageDescription, 'JSON-LD WebPage description must match the meta description');
+assert.equal(webPageNode?.dateModified, '2026-08-29', 'JSON-LD WebPage should expose the current deck modification date');
+
+const socialImage = await readFile(path.resolve(deckDirectory, 'assets/mot-nhi-og.png'));
+assert.deepEqual(
+  [...socialImage.subarray(0, 8)],
+  [0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a],
+  'Open Graph image must be a valid PNG',
+);
+assert.equal(socialImage.readUInt32BE(16), 1200, 'Open Graph image must be 1200 px wide');
+assert.equal(socialImage.readUInt32BE(20), 630, 'Open Graph image must be 630 px tall');
+
+const robots = await readFile(path.resolve(deckDirectory, 'robots.txt'), 'utf8');
+assert.match(robots, /^User-agent: \*$/m);
+assert.match(robots, /^Allow: \/$/m);
+for (const bot of ['GPTBot', 'ChatGPT-User', 'PerplexityBot', 'ClaudeBot', 'anthropic-ai', 'Google-Extended', 'Bingbot']) {
+  assert.match(robots, new RegExp(`^User-agent: ${bot}$`, 'm'), `robots.txt must mention ${bot}`);
+}
+assert.match(robots, new RegExp(`^Sitemap: ${productionOrigin.replaceAll('.', '\\.')}/sitemap\\.xml$`, 'm'));
+
+const sitemap = await readFile(path.resolve(deckDirectory, 'sitemap.xml'), 'utf8');
+assert.match(sitemap, /<urlset xmlns="http:\/\/www\.sitemaps\.org\/schemas\/sitemap\/0\.9">/);
+assert.ok(sitemap.includes(`<loc>${canonicalUrl}</loc>`), 'sitemap must include the canonical production URL');
+assert.match(sitemap, /<lastmod>\d{4}-\d{2}-\d{2}<\/lastmod>/);
 
 const externalLinks = [...html.matchAll(/<a\b[^>]*href="https:\/\/[^\"]+"[^>]*>/g)].map((match) => match[0]);
 assert.ok(externalLinks.length >= 2, 'deck must link to both source documents');

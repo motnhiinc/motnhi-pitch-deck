@@ -14,6 +14,8 @@ on:
       - README.md
       - AGENTS.md
       - CLAUDE.md
+      - robots.txt
+      - sitemap.xml
   pull_request:
     branches:
       - main
@@ -27,6 +29,8 @@ on:
       - README.md
       - AGENTS.md
       - CLAUDE.md
+      - robots.txt
+      - sitemap.xml
   workflow_dispatch:
 
 permissions: {}
@@ -76,6 +80,7 @@ jobs:
           install -d site
           cp mot-nhi-pitch-deck.html site/index.html
           cp mot-nhi-pitch-deck.html site/mot-nhi-pitch-deck.html
+          cp robots.txt sitemap.xml site/
           cp -R assets site/
 
       - name: Upload Pages artifact

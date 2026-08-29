@@ -89,6 +89,9 @@ for (const filename of ['README.md', 'AGENTS.md', 'CLAUDE.md']) {
 assert.match(workflow, /\bpull_request:/, 'workflow must validate pull requests');
 assert.match(workflow, /if:\s*github\.event_name != 'pull_request'/, 'deployment path must skip pull requests');
 assert.match(workflow, /-\s+docs\/\*\*/, 'workflow must validate source-of-truth document changes');
+assert.match(workflow, /-\s+robots\.txt/, 'workflow must run when robots.txt changes');
+assert.match(workflow, /-\s+sitemap\.xml/, 'workflow must run when sitemap.xml changes');
+assert.match(workflow, /cp robots\.txt sitemap\.xml site\//, 'deployment artifact must include crawler discovery files');
 assert.match(workflow, /actions\/setup-node@/, 'workflow must install a deterministic Node runtime for validators');
 assert.doesNotMatch(workflow, /touch site\/\.nojekyll/, 'workflow must not create an artifact that upload-pages excludes');
 const actionReferences = [...workflow.matchAll(/uses:\s*(actions\/[\w-]+)@([^\s#]+)/g)];
