@@ -13,6 +13,9 @@ Canonical facts and claims live in [docs/MOT-NHI-DECK-SOURCE-OF-TRUTH.md](docs/M
 - [assets/logo-light.png](assets/logo-light.png)
 - [assets/toan.jpg](assets/toan.jpg)
 - [assets/toan-linkedin-qr.png](assets/toan-linkedin-qr.png)
+- [assets/demo.mp4](assets/demo.mp4)
+- [assets/demo-scan.jpg](assets/demo-scan.jpg)
+- [assets/demo-ar.jpg](assets/demo-ar.jpg)
 
 It also loads **Be Vietnam Pro** from Google Fonts and supplies a system sans-serif fallback. Do not describe the deck as self-contained, embed these image files as base64, or replace their relative paths with machine-specific paths.
 
@@ -26,18 +29,17 @@ Tokens are defined in the HTML `:root` block:
 - Yellow: `#ffd166`; mint: `#5ed6a6`; coral: `#ff7d73`
 - Font: Be Vietnam Pro with system sans-serif fallbacks
 
-## Slides (10 total)
+## Slides (9 total)
 
-1. Cover — product promise and pre-launch framing
-2. Problem — screens win attention
-3. Solution — AR and read-aloud on paper books
-4. Product journey — camera permission to completed first story
-5. Differentiation — a doorway back to books
-6. Market wedge — initial parent and child audience
-7. Business model — revenue paths to validate
-8. Go-to-market — six-week learning loop
-9. Builder — Toan Nhu, Product & Engineering
-10. Pilot ask — 20 parent testers and two pilot partners
+1. Cover — everyday family reading, Vietnam first.
+2. Problem — book access and the shared-reading routine hypothesis.
+3. Solution — capture, listen, explore, return to the book.
+4. Product demo — actual supplied app recording and frames.
+5. Solana Mobile — proposed family utility and distribution path.
+6. Market wedge — Vietnamese families and a separate Seeker device cohort.
+7. Business model — trial and paid story-access hypotheses.
+8. Pilot plan — 20 parent testers, two partners, explicit validation targets.
+9. Builder & ask — Toan Nhu, testing support, and ecosystem introductions.
 
 ## Key conventions
 

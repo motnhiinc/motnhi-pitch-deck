@@ -1,4 +1,4 @@
-# Mọt Nhí — Pre-launch Pitch Deck
+# Mọt Nhí — Solana Mobile Pitch Deck
 
 Interactive pitch deck for **Mọt Nhí**, an AR-powered shared-reading app for Vietnamese children aged 3–8. Mọt Nhí adds characters, sound, and Vietnamese read-aloud to paper books so the screen becomes a bridge back to the book—not a replacement for it.
 
@@ -21,6 +21,9 @@ The deck is a single HTML entry point, but it is **not** fully self-contained. K
 - [assets/logo-light.png](assets/logo-light.png)
 - [assets/toan.jpg](assets/toan.jpg)
 - [assets/toan-linkedin-qr.png](assets/toan-linkedin-qr.png)
+- [assets/demo.mp4](assets/demo.mp4)
+- [assets/demo-scan.jpg](assets/demo-scan.jpg)
+- [assets/demo-ar.jpg](assets/demo-ar.jpg)
 
 The deck also loads **Be Vietnam Pro** from Google Fonts. A system sans-serif fallback is used if the font cannot be reached.
 
@@ -32,18 +35,17 @@ Serve the repository root with any static file server, then open `mot-nhi-pitch-
 python3 -m http.server 8000
 ```
 
-## Slide structure (10 slides)
+## Slides (9 total)
 
-1. **Cover** — Product promise and pre-launch framing.
-2. **Problem** — Screens win attention while story time struggles.
-3. **Solution** — AR and Vietnamese read-aloud layered onto paper books.
-4. **Product journey** — From camera permission to a completed first story.
-5. **Differentiation** — The screen as a doorway back to books.
-6. **Market wedge** — Initial parent and child audience.
-7. **Business model** — Revenue paths to validate through pilots.
-8. **Go-to-market** — Six-week learning loop.
-9. **Builder** — Toan Nhu and relevant product-engineering experience.
-10. **Pilot ask** — 20 parent testers and two pilot partners.
+1. Cover — everyday family reading, Vietnam first.
+2. Problem — book access and the shared-reading routine hypothesis.
+3. Solution — capture, listen, explore, return to the book.
+4. Product demo — actual supplied app recording and frames.
+5. Solana Mobile — proposed family utility and distribution path.
+6. Market wedge — Vietnamese families and a separate Seeker device cohort.
+7. Business model — trial and paid story-access hypotheses.
+8. Pilot plan — 20 parent testers, two partners, explicit validation targets.
+9. Builder & ask — Toan Nhu, testing support, and ecosystem introductions.
 
 ## Project conventions
 

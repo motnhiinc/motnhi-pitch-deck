@@ -4,8 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#6c5ce7" />
-    <title>Mọt Nhí | Pre-Launch Pitch Deck for AR Reading App</title>
-    <meta name="description" content="Explore the Mọt Nhí pre-launch pitch deck for an AR reading app that adds Vietnamese read-aloud and playful characters to paper books for ages 3–8." />
+    <title>Mọt Nhí | Solana Mobile Pitch Deck</title>
+    <meta name="description" content="Mọt Nhí brings paper books to life with AR and Vietnamese read-aloud for ages 3–8. A family reading use case for Solana Mobile." />
     <meta name="author" content="Toan Nhu" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <link rel="canonical" href="https://pitching.motnhi.vn/" />
@@ -14,8 +14,8 @@
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Mọt Nhí" />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:title" content="Mọt Nhí | Pre-Launch Pitch Deck for AR Reading App" />
-    <meta property="og:description" content="A pre-launch investor deck for Mọt Nhí, the AR reading app that turns paper books into shared Vietnamese storytime for ages 3–8." />
+    <meta property="og:title" content="Mọt Nhí | Solana Mobile Pitch Deck" />
+    <meta property="og:description" content="Vietnamese books, busy families, and a new everyday use case for Solana Mobile. Explore the Mọt Nhí demo and nine-slide pitch." />
     <meta property="og:url" content="https://pitching.motnhi.vn/" />
     <meta property="og:image" content="https://pitching.motnhi.vn/assets/mot-nhi-og.png" />
     <meta property="og:image:secure_url" content="https://pitching.motnhi.vn/assets/mot-nhi-og.png" />
@@ -25,8 +25,8 @@
     <meta property="og:image:alt" content="Mọt Nhí bookworm mascot emerging from an open book beside the words Turn the page. Enter the story." />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Mọt Nhí | Pre-Launch Pitch Deck for AR Reading App" />
-    <meta name="twitter:description" content="A pre-launch investor deck for Mọt Nhí, the AR reading app that turns paper books into shared Vietnamese storytime for ages 3–8." />
+    <meta name="twitter:title" content="Mọt Nhí | Solana Mobile Pitch Deck" />
+    <meta name="twitter:description" content="Vietnamese books, busy families, and a new everyday use case for Solana Mobile. Explore the Mọt Nhí demo and nine-slide pitch." />
     <meta name="twitter:image" content="https://pitching.motnhi.vn/assets/mot-nhi-og.png" />
     <meta name="twitter:image:alt" content="Mọt Nhí bookworm mascot emerging from an open book beside the words Turn the page. Enter the story." />
 
@@ -55,13 +55,13 @@
             "@type": "WebPage",
             "@id": "https://pitching.motnhi.vn/#webpage",
             "url": "https://pitching.motnhi.vn/",
-            "name": "Mọt Nhí | Pre-Launch Pitch Deck for AR Reading App",
-            "description": "Explore the Mọt Nhí pre-launch pitch deck for an AR reading app that adds Vietnamese read-aloud and playful characters to paper books for ages 3–8.",
+            "name": "Mọt Nhí | Solana Mobile Pitch Deck",
+            "description": "Mọt Nhí brings paper books to life with AR and Vietnamese read-aloud for ages 3–8. A family reading use case for Solana Mobile.",
             "isPartOf": { "@id": "https://pitching.motnhi.vn/#website" },
             "about": { "@id": "https://pitching.motnhi.vn/#app" },
             "primaryImageOfPage": { "@id": "https://pitching.motnhi.vn/#primaryimage" },
             "inLanguage": "en",
-            "dateModified": "2026-08-29"
+            "dateModified": "2026-10-12"
           },
           {
             "@type": "SoftwareApplication",
@@ -90,448 +90,24 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
-    <style>
-      :root {
-        --ink: #211b35;
-        --muted: #665f78;
-        --paper: #fffdf7;
-        --paper-2: #f7f2ff;
-        --purple: #6c5ce7;
-        --purple-deep: #4938bb;
-        --yellow: #ffd166;
-        --mint: #5ed6a6;
-        --coral: #ff7d73;
-        --white: #ffffff;
-        --line: rgba(67, 50, 118, 0.14);
-        --shadow: 0 24px 70px rgba(61, 43, 117, 0.15);
-        --radius: 24px;
-      }
-
-      * { box-sizing: border-box; }
-      html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; }
-      body {
-        color: var(--ink);
-        background: #dcd5f6;
-        font-family: "Be Vietnam Pro", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        -webkit-font-smoothing: antialiased;
-      }
-      button, a { font: inherit; }
-      a { color: inherit; }
-
-      .deck { position: relative; width: 100%; height: 100%; }
-      .slide {
-        position: absolute;
-        inset: 0;
-        display: grid;
-        grid-template-rows: auto 1fr auto;
-        gap: clamp(18px, 2.2vh, 30px);
-        padding: clamp(28px, 4.2vw, 70px) clamp(30px, 5.4vw, 92px) clamp(26px, 3.5vw, 56px);
-        overflow: hidden;
-        background:
-          radial-gradient(circle at 96% 4%, rgba(255, 209, 102, 0.28), transparent 24%),
-          radial-gradient(circle at 2% 94%, rgba(94, 214, 166, 0.22), transparent 26%),
-          var(--paper);
-        opacity: 0;
-        visibility: hidden;
-        transform: translateX(34px) scale(0.992);
-        transition: opacity 360ms ease, transform 460ms cubic-bezier(.2,.8,.2,1), visibility 0s linear 460ms;
-      }
-      .slide.is-active {
-        opacity: 1;
-        visibility: visible;
-        transform: translateX(0) scale(1);
-        transition-delay: 0s;
-        z-index: 2;
-      }
-      .slide::after {
-        content: "";
-        position: absolute;
-        width: min(30vw, 460px);
-        aspect-ratio: 1;
-        border: 1px solid rgba(108, 92, 231, 0.08);
-        border-radius: 50%;
-        right: -12vw;
-        bottom: -25vw;
-        box-shadow: 0 0 0 70px rgba(108, 92, 231, 0.03), 0 0 0 140px rgba(108, 92, 231, 0.02);
-        pointer-events: none;
-      }
-
-      .slide-head, .slide-foot { display: flex; align-items: center; justify-content: space-between; position: relative; z-index: 3; }
-      .brand { display: inline-flex; align-items: center; height: 42px; }
-      .brand img { width: 112px; height: 42px; object-fit: contain; object-position: left center; mix-blend-mode: multiply; filter: brightness(1.15) contrast(1.6) saturate(1.05); }
-      .section-label {
-        color: var(--purple-deep);
-        font-size: clamp(10px, 0.8vw, 14px);
-        font-weight: 800;
-        letter-spacing: 0.15em;
-        text-transform: uppercase;
-      }
-      .slide-foot { color: var(--muted); font-size: clamp(10px, 0.72vw, 13px); }
-      .slide-foot strong { color: var(--purple-deep); }
-
-      .content { min-height: 0; position: relative; z-index: 2; display: flex; flex-direction: column; justify-content: center; }
-      h1, h2, h3, p { margin: 0; }
-      h1, h2 { letter-spacing: -0.055em; line-height: 0.98; }
-      h1 { font-size: clamp(48px, 6.9vw, 112px); max-width: 1100px; }
-      h2 { font-size: clamp(38px, 5vw, 76px); max-width: 1050px; }
-      h3 { font-size: clamp(17px, 1.45vw, 25px); line-height: 1.18; letter-spacing: -0.025em; }
-      p { color: var(--muted); line-height: 1.55; font-size: clamp(13px, 1vw, 18px); }
-      .lede { max-width: 780px; margin-top: clamp(16px, 2.4vh, 30px); font-size: clamp(17px, 1.35vw, 24px); line-height: 1.5; }
-      .purple { color: var(--purple); }
-      .mint { color: #169b70; }
-      .marker { position: relative; display: inline-block; z-index: 0; }
-      .marker::after { content: ""; position: absolute; z-index: -1; left: -0.03em; right: -0.03em; bottom: 0.04em; height: 0.24em; background: var(--yellow); border-radius: 99px; transform: rotate(-1deg); opacity: .88; }
-
-      .pill-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
-      .pill { display: inline-flex; align-items: center; gap: 8px; padding: 10px 15px; border: 1px solid var(--line); border-radius: 999px; background: rgba(255,255,255,.74); color: var(--ink); font-size: clamp(11px,.8vw,14px); font-weight: 700; }
-      .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--mint); box-shadow: 0 0 0 4px rgba(94,214,166,.16); }
-
-      .grid { display: grid; gap: clamp(14px, 1.5vw, 24px); margin-top: clamp(22px, 3vh, 38px); }
-      .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-      .card {
-        position: relative;
-        padding: clamp(18px, 2vw, 30px);
-        border: 1px solid var(--line);
-        border-radius: var(--radius);
-        background: rgba(255,255,255,.78);
-        box-shadow: 0 14px 35px rgba(64,42,125,.07);
-        overflow: hidden;
-      }
-      .card::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 5px; background: var(--accent, var(--purple)); }
-      .card p { margin-top: 10px; }
-      .card-index { display: inline-flex; width: 34px; height: 34px; align-items: center; justify-content: center; border-radius: 12px; background: color-mix(in srgb, var(--accent, var(--purple)) 16%, white); color: var(--accent, var(--purple-deep)); font-weight: 800; margin-bottom: 18px; }
-
-      .cover { background: linear-gradient(135deg, #fffdf7 0%, #f6f0ff 58%, #edfdf5 100%); }
-      .cover .content { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(330px, .9fr); align-items: center; gap: 4vw; }
-      .cover h1 span { display: block; }
-      .cover .tagline { margin-top: 18px; font-size: clamp(18px, 1.6vw, 28px); font-weight: 700; color: var(--purple-deep); }
-      .hero-art { position: relative; min-height: min(58vh, 590px); display: grid; place-items: center; }
-      .hero-orbit { position: absolute; width: min(34vw, 520px); aspect-ratio: 1; border-radius: 50%; background: linear-gradient(145deg, rgba(108,92,231,.16), rgba(94,214,166,.16)); box-shadow: inset 0 0 0 1px rgba(108,92,231,.12), 0 35px 90px rgba(73,56,187,.16); }
-      .hero-book { position: relative; width: min(31vw, 470px); filter: drop-shadow(0 26px 35px rgba(66,47,125,.22)); transform: rotate(-2deg); }
-      .spark { position: absolute; color: var(--yellow); font-size: clamp(26px, 3vw, 48px); animation: float 3.4s ease-in-out infinite; }
-      .spark.s1 { top: 12%; right: 11%; }
-      .spark.s2 { left: 8%; bottom: 18%; animation-delay: -1.2s; color: var(--mint); font-size: clamp(18px, 2vw, 34px); }
-      @keyframes float { 50% { transform: translateY(-12px) rotate(8deg); } }
-
-      .problem-layout, .product-layout, .audience-layout, .ask-layout { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(28px, 5vw, 84px); align-items: center; }
-      .quote-stack { display: grid; gap: 16px; }
-      .quote-card { padding: clamp(20px, 2.2vw, 34px); border-radius: 24px; border: 1px solid var(--line); background: #fff; box-shadow: var(--shadow); transform: rotate(var(--tilt, -1deg)); }
-      .quote-card:nth-child(2) { --tilt: 1.2deg; margin-left: 8%; }
-      .quote-card strong { display: block; font-size: clamp(19px, 1.6vw, 29px); line-height: 1.25; letter-spacing: -.03em; }
-      .quote-card span { display: block; margin-top: 8px; color: var(--muted); font-size: clamp(12px,.9vw,16px); }
-
-      .phone { width: min(24vw, 300px); aspect-ratio: .52; padding: 12px; border-radius: 42px; background: #20183b; box-shadow: 0 36px 70px rgba(46,31,98,.28); transform: rotate(2deg); margin-inline: auto; }
-      .phone-screen { position: relative; height: 100%; overflow: hidden; border-radius: 32px; background: linear-gradient(165deg,#8c7ff0 0%,#6c5ce7 35%,#30245c 100%); padding: 22px; color: white; }
-      .phone-island { width: 34%; height: 16px; border-radius: 999px; background: #20183b; margin: -12px auto 22px; }
-      .camera-label { display: inline-flex; align-items: center; gap: 7px; padding: 7px 10px; border-radius: 999px; background: rgba(255,255,255,.16); font-size: 11px; font-weight: 700; }
-      .ar-scene { position: absolute; inset: 24% 10% 18%; display: grid; place-items: center; }
-      .ar-card { width: 84%; aspect-ratio: 1.15; border-radius: 24px; background: #fff6cf; transform: perspective(500px) rotateX(56deg) rotateZ(-3deg); box-shadow: 0 28px 50px rgba(21,12,55,.35); border: 6px solid white; }
-      .ar-worm { position: absolute; width: 58%; filter: drop-shadow(0 16px 13px rgba(29,19,69,.28)); animation: float 3s ease-in-out infinite; }
-      .phone-caption { position: absolute; left: 20px; right: 20px; bottom: 22px; padding: 14px 16px; border-radius: 18px; background: rgba(23,15,57,.54); backdrop-filter: blur(8px); }
-      .phone-caption strong { font-size: 13px; }
-      .phone-caption p { margin-top: 3px; color: rgba(255,255,255,.76); font-size: 10px; }
-
-      .steps { counter-reset: step; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: clamp(24px,3.2vh,46px); }
-      .step { position: relative; min-height: 200px; padding: clamp(20px,2vw,30px); border-radius: 24px; background: #fff; border: 1px solid var(--line); }
-      .step::after { content: "→"; position: absolute; top: 50%; right: -15px; z-index: 4; width: 30px; height: 30px; display: grid; place-items: center; border-radius: 50%; background: var(--purple); color: white; font-weight: 800; }
-      .step:last-child::after { display: none; }
-      .step-num { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 14px; margin-bottom: 26px; background: var(--step-color, var(--purple)); color: white; font-weight: 800; }
-      .step p { margin-top: 10px; font-size: clamp(12px,.88vw,16px); }
-
-      .position-strip { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: clamp(22px,3vh,40px); border: 1px solid var(--line); border-radius: 26px; overflow: hidden; box-shadow: var(--shadow); }
-      .position-cell { padding: clamp(22px,2.3vw,36px); background: rgba(255,255,255,.85); border-right: 1px solid var(--line); }
-      .position-cell:last-child { border-right: 0; }
-      .position-cell .mini { color: var(--purple); text-transform: uppercase; letter-spacing: .12em; font-weight: 800; font-size: 11px; }
-      .position-cell h3 { margin-top: 12px; }
-      .position-cell p { margin-top: 10px; }
-
-      .audience-ring { position: relative; width: min(35.5vw, 450px); aspect-ratio: 1; margin: auto; display: grid; place-items: center; }
-      .ring { position: absolute; border-radius: 50%; border: 1px solid var(--line); display: grid; place-items: center; text-align: center; padding: 24px; }
-      .ring.outer { inset: 0; background: rgba(94,214,166,.08); }
-      .ring.middle { inset: 14%; background: rgba(255,209,102,.17); }
-      .ring.inner { inset: 29%; background: var(--purple); color: white; box-shadow: 0 18px 45px rgba(73,56,187,.25); }
-      .ring strong { font-size: clamp(14px,1.25vw,22px); }
-      .ring small { display: block; margin-top: 6px; font-size: clamp(9px,.72vw,12px); line-height: 1.35; }
-      .ring.outer strong { position: absolute; bottom: 38px; }
-      .ring.outer small { position: absolute; bottom: 16px; }
-      .ring.middle strong { position: absolute; top: 24px; max-width: 78%; }
-      .ring.middle small { position: absolute; bottom: 18px; }
-
-      .hypothesis { display: inline-flex; align-items: center; gap: 8px; padding: 7px 11px; border-radius: 9px; background: #fff2c8; color: #7a5900; font-weight: 800; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
-      .money-card { min-height: 225px; }
-      .money-card .hypothesis { margin-bottom: 20px; }
-      .money-card .model-no { position: absolute; right: 20px; top: 10px; font-size: 64px; line-height: 1; font-weight: 800; color: rgba(108,92,231,.09); }
-      .validation-note { margin-top: 18px; padding: 14px 18px; border-radius: 14px; background: rgba(108,92,231,.07); color: var(--purple-deep); font-size: clamp(11px,.82vw,14px); font-weight: 700; }
-
-      .gtm-loop { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 16px; margin-top: 34px; }
-      .gtm-node { position: relative; min-width: 0; padding: 26px 22px; border-radius: 50% 50% 45% 55% / 55% 45% 55% 45%; aspect-ratio: 1.16; display: flex; flex-direction: column; justify-content: center; background: var(--node-bg); color: var(--node-ink, var(--ink)); box-shadow: 0 18px 35px rgba(58,41,110,.1); }
-      .gtm-node:not(:last-child)::after { content: "›"; position: absolute; right: -18px; top: 44%; z-index: 5; color: var(--purple); font-size: 34px; font-weight: 800; }
-      .gtm-node strong { font-size: clamp(16px,1.35vw,23px); }
-      .gtm-node p { color: currentColor; opacity: .72; font-size: clamp(11px,.8vw,14px); margin-top: 7px; }
-      .gtm-rule { margin-top: 24px; display: flex; gap: 12px; align-items: center; color: var(--purple-deep); font-weight: 700; font-size: clamp(11px,.9vw,16px); }
-      .gtm-rule::before { content: ""; width: 36px; height: 4px; border-radius: 99px; background: var(--mint); }
-
-      .decision-box { padding: clamp(24px,3vw,44px); border-radius: 28px; background: var(--purple); color: white; box-shadow: 0 30px 65px rgba(73,56,187,.28); }
-      .decision-box h3 { font-size: clamp(22px,2.25vw,36px); }
-      .decision-box p { color: rgba(255,255,255,.76); margin-top: 10px; }
-      .decision-box .decision-line { display: flex; align-items: center; gap: 14px; margin-top: 22px; font-weight: 700; }
-      .decision-box .decision-line span { flex: 0 0 30px; width: 30px; height: 30px; display: grid; place-items: center; border-radius: 10px; background: rgba(255,255,255,.15); }
-      .ask-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-      .ask-card { min-height: 180px; padding: 26px; border-radius: 24px; background: white; border: 1px solid var(--line); }
-      .ask-card .big { font-size: clamp(34px,4vw,62px); font-weight: 800; letter-spacing: -.06em; color: var(--ask-color,var(--purple)); }
-      .ask-card p { margin-top: 7px; }
-      .source-links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 18px; }
-      .source-links a { font-size: 11px; color: var(--purple-deep); font-weight: 700; text-underline-offset: 3px; }
-
-      .builder-layout { display: grid; grid-template-columns: minmax(300px,.78fr) minmax(0,1.22fr); gap: clamp(30px,5vw,82px); align-items: center; }
-      .builder-photo-card { position: relative; height: min(59vh,520px); overflow: hidden; border-radius: 32px; background: linear-gradient(145deg,#e6e0ff,#c7f5e3); box-shadow: 0 30px 65px rgba(73,56,187,.2); transform: rotate(-1deg); }
-      .builder-photo-card > img { width: 100%; height: 100%; object-fit: cover; object-position: center 28%; filter: saturate(.92) contrast(1.02); }
-      .builder-photo-card::after { content: ""; position: absolute; inset: 45% 0 0; background: linear-gradient(transparent,rgba(33,27,53,.82)); }
-      .builder-badge { position: absolute; z-index: 2; left: 24px; right: 24px; bottom: 22px; color: white; }
-      .builder-badge strong { display: block; font-size: clamp(22px,2vw,32px); letter-spacing: -.04em; }
-      .builder-badge span { display: block; margin-top: 4px; color: rgba(255,255,255,.76); font-size: clamp(11px,.82vw,14px); }
-      .builder-copy .lede { margin-top: 16px; }
-      .builder-proof { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 22px; }
-      .builder-proof .card { padding: 20px 22px; }
-      .builder-proof .card p { font-size: clamp(11px,.8vw,14px); }
-      .qr-card { display: grid; grid-template-columns: 118px 1fr; gap: 20px; align-items: center; margin-top: 16px; padding: 14px 18px; border: 1px solid var(--line); border-radius: 22px; background: white; color: var(--ink); text-decoration: none; box-shadow: 0 14px 34px rgba(64,42,125,.09); }
-      .qr-card > img { width: 118px; height: 118px; border-radius: 10px; }
-      .qr-card .qr-kicker { color: var(--purple); font-size: 10px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
-      .qr-card strong { display: block; margin-top: 7px; font-size: clamp(18px,1.5vw,25px); letter-spacing: -.03em; }
-      .qr-card span { display: block; margin-top: 6px; color: var(--muted); font-size: clamp(11px,.78vw,14px); line-height: 1.4; }
-
-      .progress { position: fixed; z-index: 20; left: 0; right: 0; bottom: 0; height: 4px; background: rgba(108,92,231,.12); }
-      .progress-bar { display: block; height: 100%; width: 8.333%; background: linear-gradient(90deg,var(--purple),var(--mint)); transition: width 360ms ease; }
-      .controls { position: fixed; z-index: 30; right: 22px; bottom: 18px; display: flex; gap: 8px; }
-      .controls button { width: 42px; height: 42px; border: 1px solid rgba(108,92,231,.2); border-radius: 14px; background: rgba(255,255,255,.86); color: var(--purple-deep); box-shadow: 0 10px 24px rgba(61,43,117,.12); cursor: pointer; transition: transform 150ms ease, background 150ms ease; }
-      .controls button:hover { transform: translateY(-2px); background: white; }
-      .controls button:focus-visible { outline: 3px solid rgba(108,92,231,.35); outline-offset: 2px; }
-
-      @media (max-width: 980px), (max-height: 650px) {
-        .slide { padding: 24px 42px 28px; gap: 12px; }
-        .brand img { width: 92px; height: 36px; }
-        .hero-art { min-height: 380px; }
-        .grid { margin-top: 18px; gap: 12px; }
-        .card { padding: 18px; }
-        .step { min-height: 150px; padding: 16px; }
-        .step-num { margin-bottom: 12px; }
-        .position-cell { padding: 18px; }
-      }
-
-      @media (max-aspect-ratio: 4/3) {
-        .cover .content, .problem-layout, .product-layout, .audience-layout, .builder-layout, .ask-layout { grid-template-columns: 1fr; }
-        .hero-art { position: absolute; right: 3vw; bottom: 7vh; width: 42vw; opacity: .3; }
-        .cover .content > div:first-child { z-index: 2; }
-        .quote-stack { grid-template-columns: 1fr 1fr; }
-        .phone { width: 220px; position: absolute; right: 3vw; bottom: 8vh; opacity: .23; }
-        .grid-3 { grid-template-columns: repeat(2,1fr); }
-        .steps { grid-template-columns: repeat(2,1fr); }
-        .step::after { display: none; }
-        .audience-ring { display: none; }
-        .builder-photo-card { position: absolute; right: 4vw; bottom: 8vh; width: 35vw; height: 52vh; opacity: .22; }
-      }
-
-      @media (max-width: 640px) {
-        .slide {
-          gap: 10px;
-          padding: 18px 18px 24px;
-          overflow-x: hidden;
-          overflow-y: auto;
-        }
-        .slide-head, .slide-foot { gap: 12px; flex-wrap: wrap; }
-        .slide-foot { align-items: flex-end; padding-bottom: 8px; }
-        .slide-foot strong { margin-inline-start: auto; }
-        .brand, .brand img { width: 78px; height: 30px; }
-        .section-label { font-size: 9px; letter-spacing: .1em; }
-        h1 { font-size: clamp(38px, 13vw, 52px); }
-        h2 { font-size: clamp(28px, 9vw, 38px); }
-        h3 { font-size: 16px; }
-        p, .lede { font-size: 12px; line-height: 1.45; }
-        .lede { margin-top: 12px; }
-        .grid, .pill-row, .position-strip, .gtm-loop { margin-top: 14px; }
-        .grid-2, .grid-3, .steps, .position-strip, .gtm-loop, .ask-cards, .builder-proof {
-          grid-template-columns: minmax(0, 1fr);
-        }
-        .quote-stack { grid-template-columns: minmax(0, 1fr); }
-        .quote-card:nth-child(2) { margin-left: 0; }
-        .position-cell { border-right: 0; border-bottom: 1px solid var(--line); }
-        .position-cell:last-child { border-bottom: 0; }
-        .step, .ask-card { min-height: 0; }
-        .step::after, .gtm-node:not(:last-child)::after { display: none; }
-        .gtm-node { min-height: 150px; }
-        .qr-card { grid-template-columns: minmax(0, 1fr); }
-        .qr-card > img { width: 96px; height: 96px; }
-        .validation-note, .gtm-rule { margin-top: 12px; }
-        .hero-art, .phone, .builder-photo-card { display: none; }
-        .controls { right: 12px; bottom: 10px; }
-        .controls button { width: 38px; height: 38px; }
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
-      }
-
-      @media print {
-        @page { size: 13.333in 7.5in; margin: 0; }
-        html, body { width: auto; height: auto; overflow: visible; background: white; }
-        .deck { height: auto; }
-        .slide, .slide.is-active { position: relative; width: 13.333in; height: 7.5in; opacity: 1; visibility: visible; transform: none; break-after: page; page-break-after: always; }
-        .slide:last-of-type { break-after: auto; page-break-after: auto; }
-        .controls, .progress { display: none; }
-      }
-    </style>
-  </head>
-  <body>
-    <svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
-      <symbol id="worm" viewBox="0 0 240 210">
-        <path d="M42 172c-9-31-4-64 16-91 22-30 54-44 85-34 32 11 57 47 48 78-8 27-37 46-66 37-22-7-34-31-26-51 6-15 22-24 37-20" fill="none" stroke="#5ED6A6" stroke-width="34" stroke-linecap="round"/>
-        <circle cx="148" cy="90" r="5" fill="#211B35"/><circle cx="168" cy="94" r="5" fill="#211B35"/>
-        <path d="M150 108c5 6 12 7 18 3" fill="none" stroke="#211B35" stroke-width="4" stroke-linecap="round"/>
-        <path d="m205 33 5 12 12 5-12 5-5 12-5-12-12-5 12-5 5-12Z" fill="#FFD166" stroke="#4938BB" stroke-width="3"/>
-      </symbol>
-    </svg>
-
-    <main class="deck" aria-label="Mọt Nhí pitch deck">
-      <section class="slide cover is-active" data-slide="1" aria-label="Cover slide">
-        <header class="slide-head">
-          <div class="brand"><img src="assets/logo-light.png" alt="Mọt Nhí" /></div>
-          <div class="section-label">Pre-launch pitch deck · Aug 2026</div>
-        </header>
-        <div class="content">
-          <div>
-            <div class="section-label">Interactive reading for Vietnamese families</div>
-            <h1><span>Turn the page.</span><span class="purple">Enter the story.</span></h1>
-            <p class="tagline">Chạm vào trang sách, bước vào câu chuyện.</p>
-            <p class="lede">Mọt Nhí turns paper books into shared AR adventures with Vietnamese read-aloud—designed for children aged 3–8 (<span lang="vi">trẻ 3–8 tuổi</span>) and the parents beside them.</p>
-            <div class="pill-row"><span class="pill"><span class="dot"></span> AR + Vietnamese voice</span><span class="pill"><span class="dot"></span> Books stay central</span><span class="pill"><span class="dot"></span> Parent-involved by design</span></div>
-          </div>
-          <div class="hero-art" aria-hidden="true">
-            <div class="hero-orbit"></div><span class="spark s1">✦</span><span class="spark s2">✦</span>
-            <svg class="hero-book" viewBox="0 0 560 430">
-              <path d="M44 284c73-39 151-33 236 20 85-53 163-59 236-20v92c-79-35-157-29-236 18-79-47-157-53-236-18v-92Z" fill="#FFD166" stroke="#4938BB" stroke-width="10" stroke-linejoin="round"/>
-              <path d="M280 304v90" stroke="#4938BB" stroke-width="8" stroke-linecap="round"/>
-              <use href="#worm" x="150" y="35" width="270" height="236"/>
-            </svg>
-          </div>
-        </div>
-        <footer class="slide-foot"><span>More wonder for children. More meaningful reading time for families.</span><strong>01 / 10</strong></footer>
-      </section>
-
-      <section class="slide" data-slide="2" aria-label="Problem slide">
-        <header class="slide-head"><div class="brand"><img src="assets/logo-light.png" alt="Mọt Nhí" /></div><div class="section-label">Problem</div></header>
-        <div class="content problem-layout">
-          <div><div class="section-label">Screens win attention</div><h2>Story time should not have to <span class="marker">lose.</span></h2><p class="lede">Parents want children to enjoy books, yet digital experiences are often more immediately rewarding. Today’s trade-off is too blunt: passive screen time or a paper book that may struggle to hold attention.</p></div>
-          <div class="quote-stack">
-            <div class="quote-card"><strong>“I want healthier screen time.”</strong><span>The parent need: technology that guides children back to a meaningful activity.</span></div>
-            <div class="quote-card"><strong>“I still want us to read together.”</strong><span>The design constraint: the app must support the parent–child ritual, not replace it.</span></div>
-            <div class="quote-card"><strong>“Vietnamese should feel native.”</strong><span>The local gap: voice, stories, and onboarding made for Vietnamese families.</span></div>
-          </div>
-        </div>
-        <footer class="slide-foot"><span>Problem framing from the GTM and brand foundation documents.</span><strong>02 / 10</strong></footer>
-      </section>
-
-      <section class="slide" data-slide="3" aria-label="Solution slide">
-        <header class="slide-head"><div class="brand"><img src="assets/logo-light.png" alt="Mọt Nhí" /></div><div class="section-label">Solution</div></header>
-        <div class="content product-layout">
-          <div class="phone" aria-label="Illustrative Mọt Nhí app screen">
-            <div class="phone-screen"><div class="phone-island"></div><span class="camera-label">◉ Story camera · Live</span><div class="ar-scene"><div class="ar-card"></div><svg class="ar-worm" viewBox="0 0 240 210"><use href="#worm"/></svg></div><div class="phone-caption"><strong>The character comes alive</strong><p>Vietnamese narration follows the page.</p></div></div>
-          </div>
-          <div><div class="section-label">A bridge, not a replacement</div><h2>Paper book in hand. <span class="purple">Magic on top.</span></h2><p class="lede">Point the camera at a page. Mọt Nhí adds characters, sound, and Vietnamese read-aloud while the child controls the pace and the parent stays present.</p><div class="grid grid-2"><div class="card" style="--accent:var(--purple)"><h3>Interaction with purpose</h3><p>AR rewards attention to the physical page instead of pulling the child into an endless feed.</p></div><div class="card" style="--accent:var(--mint)"><h3>Designed for completion</h3><p>Each story has a clear beginning and end, creating a measurable first-value moment.</p></div></div></div>
-        </div>
-        <footer class="slide-foot"><span>Product concept · one polished story in v0.1 Alpha.</span><strong>03 / 10</strong></footer>
-      </section>
-
-      <section class="slide" data-slide="4" aria-label="Product journey slide">
-        <header class="slide-head"><div class="brand"><img src="assets/logo-light.png" alt="Mọt Nhí" /></div><div class="section-label">Product demo</div></header>
-        <div class="content"><div class="section-label">One experience to prove first</div><h2>From camera permission to <span class="purple">completed story.</span></h2><div class="steps">
-          <article class="step" style="--step-color:var(--purple)"><div class="step-num">01</div><h3>Open a story</h3><p>A parent chooses the supported book and helps the child begin.</p></article>
-          <article class="step" style="--step-color:var(--coral)"><div class="step-num">02</div><h3>Point at the page</h3><p>Fast onboarding makes camera and audio permissions feel safe and clear.</p></article>
-          <article class="step" style="--step-color:#d4a21e"><div class="step-num">03</div><h3>Explore together</h3><p>AR characters and Vietnamese voice reward curiosity without replacing the book.</p></article>
-          <article class="step" style="--step-color:#169b70"><div class="step-num">04</div><h3>Finish the story</h3><p>The canonical activation event is <strong>“completed first story”.</strong></p></article>
-        </div></div>
-        <footer class="slide-foot"><span>Every growth decision starts with this measurable journey.</span><strong>04 / 10</strong></footer>
-      </section>
-
-      <section class="slide" data-slide="5" aria-label="Positioning slide">
-        <header class="slide-head"><div class="brand"><img src="assets/logo-light.png" alt="Mọt Nhí" /></div><div class="section-label">Differentiation</div></header>
-        <div class="content"><div class="section-label">A distinct product promise</div><h2>Make the screen a doorway <span class="marker">back to books.</span></h2><div class="position-strip">
-          <article class="position-cell"><span class="mini">Keep</span><h3>The physical book</h3><p>The page remains the anchor. The app adds a layer of wonder without replacing ownership, touch, or shared reading.</p></article>
-          <article class="position-cell"><span class="mini">Add</span><h3>AR + Vietnamese voice</h3><p>Characters, sound, and read-aloud make the moment more accessible and locally resonant.</p></article>
-          <article class="position-cell"><span class="mini">Protect</span><h3>The family ritual</h3><p>Finite stories, child-led pacing, and parent involvement create healthier screen time by design.</p></article>
-        </div><p class="lede">The category is not “another learning app.” Mọt Nhí is an interactive layer for the books families already want children to love.</p></div>
-        <footer class="slide-foot"><span>Core promise: more wonder; more meaningful reading time.</span><strong>05 / 10</strong></footer>
-      </section>
-
-      <section class="slide" data-slide="6" aria-label="Audience slide">
-        <header class="slide-head"><div class="brand"><img src="assets/logo-light.png" alt="Mọt Nhí" /></div><div class="section-label">Market wedge</div></header>
-        <div class="content audience-layout">
-          <div><div class="section-label">Start narrow, learn fast</div><h2>Win one family moment before scaling the market.</h2><p class="lede"><strong>Primary ICP:</strong> urban Vietnamese parents aged 25–40 with children aged 3–8 who already buy books or learning products and want healthier screen time.</p><div class="grid grid-2"><div class="card" style="--accent:var(--purple)"><h3>Parent buyer</h3><p>Values shared reading, local-language content, and a clear boundary around screen use.</p></div><div class="card" style="--accent:var(--mint)"><h3>Child user</h3><p>Needs instant delight, simple interactions, and the freedom to progress at their own pace.</p></div></div></div>
-          <div class="audience-ring" aria-label="Go-to-market audience rings"><div class="ring outer"><strong>Parent communities</strong><small>Trust + distribution</small></div><div class="ring middle"><strong>Preschools · bookstores · publishers</strong><small>Demos + partnerships</small></div><div class="ring inner"><strong>Families<br/>ages 3–8</strong><small>first wedge</small></div></div>
-        </div>
-        <footer class="slide-foot"><span>Secondary audiences expand distribution only after family retention is proven.</span><strong>06 / 10</strong></footer>
-      </section>
-
-      <section class="slide" data-slide="7" aria-label="Business model slide">
-        <header class="slide-head"><div class="brand"><img src="assets/logo-light.png" alt="Mọt Nhí" /></div><div class="section-label">Business model</div></header>
-        <div class="content"><div class="section-label">Monetization to validate—not pretend</div><h2>Three revenue paths. <span class="purple">One pilot decides.</span></h2><div class="grid grid-3">
-          <article class="card money-card" style="--accent:var(--purple)"><span class="model-no">1</span><span class="hypothesis">Hypothesis</span><h3>Family access</h3><p>Trial-to-paid access for a growing library of interactive stories. Pilot interviews determine packaging and willingness to pay.</p></article>
-          <article class="card money-card" style="--accent:#d4a21e"><span class="model-no">2</span><span class="hypothesis">Hypothesis</span><h3>Story packs</h3><p>One-off or bundled story unlocks for families who prefer ownership over a recurring subscription.</p></article>
-          <article class="card money-card" style="--accent:#169b70"><span class="model-no">3</span><span class="hypothesis">Hypothesis</span><h3>Partner programs</h3><p>Publisher, bookstore, and preschool packages that pair content, live demos, and family acquisition.</p></article>
-        </div><div class="validation-note">Pricing is intentionally absent: the roadmap requires willingness-to-pay evidence before a model or price point is presented as fact.</div></div>
-        <footer class="slide-foot"><span>Decision rule: monetize the behavior families repeat—not the feature they merely try.</span><strong>07 / 10</strong></footer>
-      </section>
-
-      <section class="slide" data-slide="8" aria-label="Go-to-market slide">
-        <header class="slide-head"><div class="brand"><img src="assets/logo-light.png" alt="Mọt Nhí" /></div><div class="section-label">Go-to-market</div></header>
-        <div class="content"><div class="section-label">A six-week learning engine</div><h2>Show the magic. Earn trust. <span class="marker">Measure return.</span></h2><div class="gtm-loop">
-          <article class="gtm-node" style="--node-bg:#ece8ff"><strong>Short-form reveal</strong><p>4–5 weekly videos: book → AR, child reactions, parent pain points.</p></article>
-          <article class="gtm-node" style="--node-bg:#fff1c7"><strong>Community trust</strong><p>Value-first posts, live demos, and early-tester recruitment.</p></article>
-          <article class="gtm-node" style="--node-bg:#daf8ea"><strong>Partner proof</strong><p>Two preschool, bookstore, or publisher pilots with QR demos.</p></article>
-          <article class="gtm-node" style="--node-bg:#ffe1de"><strong>Referral loop</strong><p>Unlock bonus stories only after week-two retention is proven.</p></article>
-        </div><div class="gtm-rule">Review weekly. After launch, double down on the two channels that produce activated and returning families—not the most views.</div></div>
-        <footer class="slide-foot"><span>Product Hunt, directories, and hackathons support launch visibility; they are not the core engine.</span><strong>08 / 10</strong></footer>
-      </section>
-
-      <section class="slide" data-slide="9" aria-label="Builder slide">
-        <header class="slide-head"><div class="brand"><img src="assets/logo-light.png" alt="Mọt Nhí" /></div><div class="section-label">Builder</div></header>
-        <div class="content builder-layout">
-          <div class="builder-photo-card">
-            <img src="assets/toan.jpg" alt="Portrait of Toan Nhu" />
-            <div class="builder-badge"><strong>Toan Nhu</strong><span>Builder · Product &amp; Engineering</span></div>
-          </div>
-          <div class="builder-copy">
-            <div class="section-label">Technical builder–market fit</div>
-            <h2>The builder behind the <span class="purple">first story.</span></h2>
-            <p class="lede"><strong>Toan Nhu</strong> combines product engineering and scalable data systems with a long-running interest in Vietnamese voice technology.</p>
-            <div class="builder-proof">
-              <article class="card" style="--accent:var(--purple)"><h3>Vietnamese voice roots</h3><p>Graduation research: “Free Vietnamese Text to Speech with Natural Voices.”</p></article>
-              <article class="card" style="--accent:var(--mint)"><h3>Systems builder</h3><p>Public technical work spans real-time systems, CI/CD, data engineering, and AI-native products.</p></article>
-            </div>
-            <a class="qr-card" href="https://www.linkedin.com/in/toannhu" target="_blank" rel="noopener noreferrer">
-              <img src="assets/toan-linkedin-qr.png" alt="QR code for Toan Nhu's LinkedIn profile" />
-              <div><span class="qr-kicker">Scan to verify</span><strong>Meet the builder ↗</strong><span>Open Toan’s public LinkedIn profile and technical background.</span></div>
-            </a>
-          </div>
-        </div>
-        <footer class="slide-foot"><span>Public profile and technical work verified 21 Aug 2026.</span><strong>09 / 10</strong></footer>
-      </section>
-
-      <section class="slide" data-slide="10" aria-label="Ask slide">
-        <header class="slide-head"><div class="brand"><img src="assets/logo-light.png" alt="Mọt Nhí" /></div><div class="section-label">Pilot ask</div></header>
-        <div class="content ask-layout">
-          <div class="decision-box"><div class="section-label" style="color:#dcd6ff">Help prove the first reading loop</div><h3>Build one story families choose to finish—and return to.</h3><p>This deck asks for learning access before asking for scale capital.</p><div class="decision-line"><span>✓</span>Observe real parent–child reading sessions</div><div class="decision-line"><span>✓</span>Run live book-to-AR partner demos</div><div class="decision-line"><span>✓</span>Validate retention and willingness to pay</div></div>
-          <div><h2>We are inviting:</h2><div class="ask-cards"><article class="ask-card"><div class="big">20</div><h3>parent testers</h3><p>Families with children aged 3–8 for the closed beta.</p></article><article class="ask-card" style="--ask-color:#169b70"><div class="big">2</div><h3>pilot partners</h3><p>We need two pilot partners—preschools, bookstores, or publishers—ready to host a live demo.</p></article></div><div class="source-links"><a href="https://app.notion.com/p/GTM-plan-3b4ff178a0e4803f8b06ed54d52267f1" target="_blank" rel="noopener noreferrer">Source · GTM plan ↗</a><a href="https://app.notion.com/p/Brand-Foundation-Release-Roadmap-M-t-Nh-3bfff178a0e480faaa55e8ac9cb80548?pvs=13" target="_blank" rel="noopener noreferrer">Source · Brand &amp; release roadmap ↗</a></div></div>
-        </div>
-        <footer class="slide-foot"><span>Next milestone: v0.2 Closed Beta · 31 Aug–13 Sep 2026.</span><strong>10 / 10</strong></footer>
-      </section>
-    </main>
-
-    <div class="progress" aria-hidden="true"><span class="progress-bar"></span></div>
-    <div class="controls" aria-label="Slide controls"><button type="button" class="prev" aria-label="Previous slide">←</button><button type="button" class="next" aria-label="Next slide">→</button></div>
-    <div id="slide-status" class="sr-only" aria-live="polite" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">Slide 1 of 10</div>
-
-    <script>
+<style>
+:root {--ink:#211b35;--muted:#665f78;--paper:#fffdf7;--paper-2:#f7f2ff;--purple:#6c5ce7;--purple-deep:#4938bb;--yellow:#ffd166;--mint:#5ed6a6;--coral:#ff7d73}
+.print-demo{display:none}*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden}body{font-family:"Be Vietnam Pro",system-ui,sans-serif;color:var(--ink);background:var(--paper)}a{color:var(--purple-deep);text-underline-offset:4px}button,a{font:inherit}.deck{height:100%}.slide{position:absolute;inset:0;width:100vw;height:100vh;height:100dvh;padding:clamp(20px,4vw,64px);padding-bottom:60px;display:flex;flex-direction:column;gap:clamp(12px,2vh,24px);overflow:hidden;background:var(--paper);visibility:hidden;opacity:0;transition:opacity .25s}.slide.is-active{visibility:visible;opacity:1;z-index:2}.slide:nth-child(even){background:var(--paper-2)}.slide-head,.slide-foot{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-shrink:0}.slide-head img{width:110px;height:42px;object-fit:contain}.slide-head span{text-transform:uppercase;letter-spacing:.13em;font-weight:800;color:var(--purple-deep);font-size:clamp(10px,1vw,15px)}.slide-foot{font-size:clamp(10px,.9vw,13px);color:var(--muted);margin-top:auto}.slide-foot strong{white-space:nowrap}.content{flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center;gap:clamp(14px,2.4vh,28px)}h2,h3,p{margin:0}h2{font-size:clamp(32px,4.7vw,76px);line-height:1.08;letter-spacing:-.045em}em{font-style:normal;color:var(--purple)}h3{font-size:clamp(18px,1.65vw,27px);line-height:1.25}p{font-size:clamp(16px,1.35vw,22px);line-height:1.5;color:var(--muted)}.lede{max-width:1000px;font-size:clamp(18px,1.75vw,28px)}.promise{color:var(--purple-deep);font-weight:700;margin-top:20px}.columns{display:grid;grid-template-columns:1fr 1fr;gap:clamp(22px,4vw,60px);align-items:center}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.card{padding:clamp(18px,2vw,30px);background:white;border:1px solid #ded8eb;border-radius:22px;border-top:5px solid var(--purple)}.card:nth-child(2){border-top-color:var(--mint)}.card:nth-child(3){border-top-color:var(--yellow)}.card p{margin-top:12px}.stack{display:grid;gap:18px}.note{font-size:clamp(12px,1.05vw,17px);color:var(--muted)}.pills{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}.pills span{padding:8px 14px;border-radius:30px;background:#e8e2ff;font-weight:700;font-size:14px}.cover .content{position:relative;padding-right:32%}.hero{display:block}.hero-shot{position:absolute;right:5%;top:0;height:100%;max-height:58vh;border-radius:25px;transform:rotate(3deg);box-shadow:15px 15px 0 var(--mint)}.stat{padding:24px;border-left:7px solid var(--mint)}.stat>strong{font-size:clamp(70px,9vw,145px);line-height:1;color:var(--purple);letter-spacing:-.07em}.stat p{margin:18px 0}.stat small{font-size:13px;color:var(--muted)}.demo-layout{display:grid;grid-template-columns:1fr 1fr 1.2fr;gap:28px;align-items:center;min-height:0}.demo-layout figure{margin:0;text-align:center;min-height:0}.demo-layout img,.demo-layout video{height:39vh;max-width:100%;border-radius:16px;background:#211b35;object-fit:contain}.demo-layout figcaption{font-size:13px;margin-top:8px;font-weight:700}.demo-copy{display:grid;gap:18px}.metrics h3{font-size:clamp(36px,4vw,64px);color:var(--purple)}.builder{display:flex;gap:24px;align-items:center}.portrait{width:32%;max-height:240px;object-fit:cover;border-radius:22px}.builder p{margin-top:10px}.contact{display:flex;align-items:center;gap:18px;flex-wrap:wrap}.contact img{width:75px;height:75px}.controls{position:fixed;z-index:30;right:20px;bottom:10px;display:flex;gap:8px}.controls button{width:38px;height:38px;border:1px solid #c9bfee;border-radius:10px;color:var(--purple-deep);background:white;cursor:pointer}.progress{position:fixed;bottom:0;left:0;width:100%;height:4px;z-index:30}.progress-bar{display:block;height:100%;background:var(--purple)}:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
+@media (max-width: 980px) and (min-height: 700px){.columns{gap:20px}.cards{gap:12px}.card{padding:18px}.demo-layout{grid-template-columns:1fr 1fr}.demo-copy{grid-column:1/-1}.demo-layout img,.demo-layout video{height:28vh}}
+@media (max-width: 640px){.slide{padding:16px 18px 54px;gap:10px}.slide-head img{width:76px;height:30px}.slide-head span{font-size:9px}.content{gap:14px}h2{font-size:30px}h3{font-size:17px}p,.lede{font-size:15px;line-height:1.4}.columns{grid-template-columns:1fr;gap:14px}.cards{grid-template-columns:1fr;gap:10px}.card{padding:12px 14px;border-radius:14px;border-top-width:3px}.card p{margin-top:5px;font-size:14px}.stack{gap:10px}.note{font-size:11px}.slide-foot{font-size:9px;gap:8px}.cover .content{padding-right:0;justify-content:flex-start;padding-top:24px}.cover h2{font-size:37px}.hero-shot{position:relative;display:block;top:auto;right:auto;height:23vh;margin:22px auto 0}.promise{margin-top:12px}.pills{margin-top:12px;gap:6px}.pills span{font-size:10px;padding:6px 9px}.stat{padding:8px 14px}.stat>strong{font-size:62px}.stat p{margin:8px 0}.stat small{font-size:10px}.demo-layout{grid-template-columns:1fr 1fr;gap:12px}.demo-layout img,.demo-layout video{height:24vh}.demo-layout figcaption{font-size:10px}.demo-copy{grid-column:1/-1;gap:8px}.demo-copy h3{font-size:16px}.demo-copy p{font-size:13px}.metrics h3{font-size:30px}.metrics .card{display:grid;grid-template-columns:80px 1fr;gap:8px;align-items:center}.metrics .card p{margin:0}.builder{gap:14px}.portrait{width:70px;height:100px}.builder p{font-size:13px;margin-top:6px}.contact{gap:12px;font-size:13px}.contact img{width:50px;height:50px}}
+@media (max-height: 500px) and (min-width: 641px){.slide{padding:12px 26px 45px;gap:8px}.slide-head img{height:25px;width:75px}.content{gap:10px}h2{font-size:30px}h2 br{display:none}h3{font-size:16px}p,.lede{font-size:13px}.card{padding:12px}.card p{margin-top:5px}.cards{gap:12px}.note,.slide-foot{font-size:10px}.stack{gap:8px}.stat>strong{font-size:60px}.stat p{margin:5px 0}.stat small{font-size:10px}.promise,.pills{margin-top:10px}.hero-shot{max-height:55vh}.metrics h3{font-size:32px}.demo-layout img,.demo-layout video{height:42vh}.demo-copy{gap:8px}.demo-layout figcaption{font-size:10px}.portrait{height:130px}.contact img{width:45px;height:45px}.builder p{margin-top:5px}}
+@media (max-width: 360px) and (max-height: 620px){.slide{padding:12px 14px 48px;gap:8px}.content{gap:9px}h2{font-size:25px}h3{font-size:15px}p,.lede{font-size:14px}.cards,.columns,.stack{gap:8px}.card{padding:9px 11px}.card p{font-size:13px;line-height:1.35}.note{font-size:10px;line-height:1.35}.cover .content{padding-top:8px}.cover h2{font-size:32px}.hero-shot{height:20vh;margin-top:14px}.stat>strong{font-size:48px}.stat p{margin:5px 0}.metrics h3{font-size:28px}.promise{font-size:13px}.slide-foot{font-size:8px}}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{transition:none!important;animation:none!important}}
+@media print{.demo-layout{grid-template-columns:1fr 1fr 1.2fr}.demo-copy{grid-column:auto}.demo-layout video,.video-link{display:none}.demo-layout .print-demo{display:inline-block}@page{size:13.333in 7.5in;margin:0}html,body{height:auto;overflow:visible}.deck{height:auto}.slide,.slide.is-active{position:relative;width:13.333in;height:7.5in;visibility:visible;opacity:1;break-after:page;padding:36px 48px}.slide:last-child{break-after:auto}.controls,.progress,#slide-status{display:none}h2{font-size:52px}.content{gap:20px}p{font-size:18px}.lede{font-size:22px}.hero-shot{height:360px}.demo-layout img,.demo-layout video{height:280px}.slide-foot{font-size:11px}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style></head><body><main class="deck" aria-label="Mọt Nhí pitch deck"><section class="slide cover is-active" data-slide="1" aria-label="Solana Mobile pitch deck slide"><header class="slide-head"><img src="assets/logo-light.png" alt="Mọt Nhí"/><span>Solana Mobile pitch deck</span></header><div class="content"><h2>Small moments.<br><em>Lifelong readers.</em></h2><div class="columns hero"><div><p class="lede">Mọt Nhí brings paper books to life with AR and Vietnamese read-aloud for children ages 3–8.</p><p class="promise">Help busy families make room for one more story.</p><div class="pills"><span>Vietnam first</span><span>Family utility</span><span>Demo available</span></div></div><img class="hero-shot" src="assets/demo-ar.jpg" alt="Actual demo: AR character beside a paper book with read-aloud controls"/></div></div><footer class="slide-foot"><span><a href="https://motnhi.vn/" target="_blank" rel="noopener noreferrer">motnhi.vn ↗</a> · October 2026</span><strong>01 / 9</strong></footer></section>
+<section class="slide  " data-slide="2" aria-label="Problem slide"><header class="slide-head"><img src="assets/logo-light.png" alt="Mọt Nhí"/><span>Problem</span></header><div class="content"><h2>Books need a place<br>in <em>busy family routines.</em></h2><div class="columns"><div class="stat"><strong>27%</strong><p>of children under five in Vietnam had at least three children’s books at home.</p><small>GSO / UNICEF, 2020–21 · Book access, not reading frequency.</small></div><div class="stack"><article class="card"><h3>Books alone are not a habit</h3><p>Children need help getting started and a reason to return to the page.</p></article><article class="card"><h3>Time is the constraint we want to ease</h3><p>Our customer hypothesis: work and care responsibilities make regular shared reading hard to sustain.</p></article></div></div></div><footer class="slide-foot"><span><a href="https://www.unicef.org/vietnam/media/8681/file/Early%20Childhood%20Development.pdf" target="_blank" rel="noopener noreferrer">Source: Viet Nam SDGCW 2020–21, p. 2 ↗</a></span><strong>02 / 9</strong></footer></section>
+<section class="slide  " data-slide="3" aria-label="Solution slide"><header class="slide-head"><img src="assets/logo-light.png" alt="Mọt Nhí"/><span>Solution</span></header><div class="content"><h2>Less effort to begin.<br><em>More reason to read.</em></h2><p class="lede">A phone becomes a bridge back to the paper book.</p><div class="cards"><article class="card"><h3>Capture a page</h3><p>A parent opens a book and scans a page with the child.</p></article><article class="card"><h3>Listen and explore</h3><p>Vietnamese read-aloud supports the story; an AR character adds a moment of wonder.</p></article><article class="card"><h3>Return to the book</h3><p>Turn the page and continue together. The parent stays part of the experience.</p></article></div><p class="note">Designed to support shared reading. Better reading habits are an outcome to validate.</p></div><footer class="slide-foot"><span>Product principle: support the book and the parent’s role.</span><strong>03 / 9</strong></footer></section>
+<section class="slide  " data-slide="4" aria-label="Product demo slide"><header class="slide-head"><img src="assets/logo-light.png" alt="Mọt Nhí"/><span>Product demo</span></header><div class="content"><h2>A real book.<br><em>A working experience.</em></h2><div class="demo-layout"><figure><img src="assets/demo-scan.jpg" alt="Demo frame: camera captures a Vietnamese book page"/><figcaption>01 · Capture the page</figcaption></figure><figure><video controls playsinline preload="none" poster="assets/demo-ar.jpg" src="assets/demo.mp4" aria-label="Mọt Nhí app demo"><a href="assets/demo.mp4">Play demo</a></video><img class="print-demo" src="assets/demo-ar.jpg" alt="AR character and narration controls in the supplied demo"/><figcaption>02 · AR + read-aloud controls</figcaption></figure><div class="demo-copy"><h3>62 seconds of the app in action</h3><p>Supplied recording shows page capture, preparation, an AR character, and narration controls.</p><p class="note">Next: reduce preparation time and verify the full story flow on Seeker.</p><a class="video-link" href="assets/demo.mp4">Open video ↗</a></div></div></div><footer class="slide-foot"><span>Actual app recording · supplied 12 October 2026.</span><strong>04 / 9</strong></footer></section>
+<section class="slide  " data-slide="5" aria-label="Solana Mobile slide"><header class="slide-head"><img src="assets/logo-light.png" alt="Mọt Nhí"/><span>Solana Mobile</span></header><div class="content"><h2>A phone for daily life.<br><em>A place for family reading.</em></h2><p class="lede">Our thesis: a family reading routine gives parents a reason to return.</p><div class="cards"><article class="card"><h3>A focused consumer use case</h3><p>Vietnamese stories for parents with compatible phones. A daily use beyond crypto.</p></article><article class="card"><h3>A practical distribution path</h3><p>Test on Seeker, then seek publication in the Solana dApp Store.</p></article><article class="card"><h3>A family-first experience</h3><p>Children explore books. Any future wallet or purchase step stays with parents.</p></article></div><p class="note">Proposed direction: family demand, Seeker support, and store publication remain unverified. No Solana integration claimed.</p></div><footer class="slide-foot"><span><a href="https://solanamobile.com/blog/clock-in-the-solana-mobile-hackathon" target="_blank" rel="noopener noreferrer">Clock In: consumer utility &amp; stickiness ↗</a></span><strong>05 / 9</strong></footer></section>
+<section class="slide  " data-slide="6" aria-label="Market wedge slide"><header class="slide-head"><img src="assets/logo-light.png" alt="Mọt Nhí"/><span>Market wedge</span></header><div class="content"><h2>Start with one audience.<br><em>Earn the next story.</em></h2><div class="columns"><div><p class="lede">Vietnamese parents aged 25–40 in cities, with children ages 3–8, who already buy books.</p><p class="promise">First occasion: a short shared story at home.</p></div><div class="stack"><article class="card"><h3>Reach families through books</h3><p>Recruit through parent communities, bookstores, preschools, and publisher demos.</p></article><article class="card"><h3>Test two audiences separately</h3><p>Test reading habits with Vietnamese families and device fit with Seeker parents.</p></article></div></div></div><footer class="slide-foot"><span>Vietnam family demand does not imply Seeker adoption.</span><strong>06 / 9</strong></footer></section>
+<section class="slide  " data-slide="7" aria-label="Business model slide"><header class="slide-head"><img src="assets/logo-light.png" alt="Mọt Nhí"/><span>Business model</span></header><div class="content"><h2>Prove repeat reading.<br><em>Then earn the purchase.</em></h2><div class="cards"><article class="card"><h3>Start with a trial</h3><p>Let families finish a first story before asking them to pay.</p></article><article class="card"><h3>Test paid story access</h3><p>Compare story packs with family library access. Packaging and price remain unvalidated.</p></article><article class="card"><h3>Grow through partners</h3><p>Explore licensed book bundles with publishers and bookstores once family demand is demonstrated.</p></article></div><p class="lede">The parent pays for a useful reading experience. The child gets a story worth returning to.</p></div><footer class="slide-foot"><span>Revenue hypotheses · no revenue or pricing claim.</span><strong>07 / 9</strong></footer></section>
+<section class="slide  " data-slide="8" aria-label="Pilot plan slide"><header class="slide-head"><img src="assets/logo-light.png" alt="Mọt Nhí"/><span>Pilot plan</span></header><div class="content"><h2>Measure reading.<br><em>Not just downloads.</em></h2><p class="lede">Recruit 20 parent testers and two pilot partners. Observe the first story, then follow up in week two.</p><div class="cards metrics"><article class="card"><h3>≥60%</h3><p>Target: completed first story within 24 hours of starting the trial.</p></article><article class="card"><h3>≥30%</h3><p>Target: return in week two. Ask whether families actually read together again.</p></article><article class="card"><h3>≥10%</h3><p>Target: trial-to-paid, or strong documented willingness to pay.</p></article></div><p class="note">Targets, not results. Also check parent effort, preparation delays, content fit, and Seeker performance.</p></div><footer class="slide-foot"><span>Activation event: completed first story · no achieved traction claimed.</span><strong>08 / 9</strong></footer></section>
+<section class="slide  " data-slide="9" aria-label="Builder &amp; ask slide"><header class="slide-head"><img src="assets/logo-light.png" alt="Mọt Nhí"/><span>Builder &amp; ask</span></header><div class="content"><h2>Help us bring story time<br>to <em>Solana Mobile.</em></h2><div class="columns"><div class="builder"><img class="portrait" src="assets/toan.jpg" alt="Toan Nhu, Product and Engineering"/><div><h3>Toan Nhu</h3><p>Product &amp; Engineering</p><p>Background in software and data systems; graduation research in natural Vietnamese text-to-speech.</p></div></div><div class="stack"><article class="card"><h3>What we need next</h3><p>Seeker testing support, feedback on dApp Store readiness, and introductions to family and publishing communities.</p></article><div class="contact"><a href="https://motnhi.vn/" target="_blank" rel="noopener noreferrer">Explore Mọt Nhí ↗</a><a href="https://www.linkedin.com/in/toannhu" target="_blank" rel="noopener noreferrer">Meet Toan ↗</a><img src="assets/toan-linkedin-qr.png" alt="QR code for Toan Nhu’s LinkedIn profile"/></div></div></div></div><footer class="slide-foot"><span>A small reading moment. A meaningful family use case.</span><strong>09 / 9</strong></footer></section></main><div class="progress" aria-hidden="true"><span class="progress-bar"></span></div><div class="controls" aria-label="Slide controls"><button class="prev" aria-label="Previous slide">←</button><button class="next" aria-label="Next slide">→</button></div><div id="slide-status" aria-live="polite" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">Slide 1 of 9</div>    <script>
       (() => {
         const slides = Array.from(document.querySelectorAll('.slide'));
         const progress = document.querySelector('.progress-bar');
@@ -545,10 +121,14 @@
         };
         let current = readHashIndex();
         let touchStartX = null;
+        let touchStartY = null;
 
         const show = (index, updateHash = true) => {
           current = normalizeSlideIndex(index);
-          slides.forEach((slide, i) => slide.classList.toggle('is-active', i === current));
+          slides.forEach((slide, i) => {
+            slide.classList.toggle('is-active', i === current);
+            if (slide.querySelectorAll && i !== current) slide.querySelectorAll('video').forEach(video => video.pause());
+          });
           progress.style.width = `${((current + 1) / slides.length) * 100}%`;
           status.textContent = `Slide ${current + 1} of ${slides.length}: ${slides[current].getAttribute('aria-label')}`;
           if (updateHash) history.replaceState(null, '', `#${current + 1}`);
@@ -557,16 +137,18 @@
         document.querySelector('.prev').addEventListener('click', () => show(current - 1));
         document.querySelector('.next').addEventListener('click', () => show(current + 1));
         document.addEventListener('keydown', (event) => {
+          if (event.target?.closest('video, input, textarea, select')) return;
+          if (event.key === ' ' && event.target?.closest('button, a')) return;
           if (['ArrowRight', 'PageDown', ' '].includes(event.key)) { event.preventDefault(); show(current + 1); }
           if (['ArrowLeft', 'PageUp'].includes(event.key)) { event.preventDefault(); show(current - 1); }
           if (event.key === 'Home') { event.preventDefault(); show(0); }
           if (event.key === 'End') { event.preventDefault(); show(slides.length - 1); }
         });
-        document.addEventListener('touchstart', (event) => { touchStartX = event.changedTouches[0].clientX; }, { passive: true });
+        document.addEventListener('touchstart', (event) => { if (event.target?.closest('video, button, a')) return; touchStartX = event.changedTouches[0].clientX; touchStartY = event.changedTouches[0].clientY; }, { passive: true });
         document.addEventListener('touchend', (event) => {
           if (touchStartX === null) return;
           const delta = event.changedTouches[0].clientX - touchStartX;
-          if (Math.abs(delta) > 48) show(current + (delta < 0 ? 1 : -1));
+          if (Math.abs(delta) > 48 && Math.abs(delta) > Math.abs(event.changedTouches[0].clientY - touchStartY)) show(current + (delta < 0 ? 1 : -1));
           touchStartX = null;
         }, { passive: true });
         window.addEventListener('hashchange', () => show(readHashIndex(), false));

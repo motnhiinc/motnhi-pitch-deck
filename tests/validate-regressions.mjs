@@ -17,7 +17,7 @@ const workflowPath = path.join(root, '.github', 'workflows', 'deploy-mot-nhi-pit
 const deckHtml = await readFile(deckPath, 'utf8');
 const workflow = await readFile(workflowPath, 'utf8');
 
-const requiredAssets = ['assets/logo-light.png', 'assets/toan.jpg', 'assets/toan-linkedin-qr.png'];
+const requiredAssets = ['assets/logo-light.png', 'assets/toan.jpg', 'assets/toan-linkedin-qr.png', 'assets/demo.mp4', 'assets/demo-scan.jpg', 'assets/demo-ar.jpg'];
 for (const missingAsset of requiredAssets) {
   const fixtureRoot = await mkdtemp(path.join(tmpdir(), 'mot-nhi-missing-assets-'));
   try {
@@ -44,7 +44,7 @@ for (const missingAsset of requiredAssets) {
 const scripts = [...deckHtml.matchAll(/<script>([\s\S]*?)<\/script>/g)].map((match) => match[1]);
 assert.equal(scripts.length, 1, 'deck must expose one interaction script for navigation testing');
 
-const slides = Array.from({ length: 10 }, (_, index) => ({
+const slides = Array.from({ length: 9 }, (_, index) => ({
   active: index === 0,
   classList: { toggle: (_name, state) => { slides[index].active = state; } },
   getAttribute: () => `Slide ${index + 1}`,
@@ -52,13 +52,14 @@ const slides = Array.from({ length: 10 }, (_, index) => ({
 const progress = { style: {} };
 const status = { textContent: '' };
 const windowListeners = new Map();
+const documentListeners = new Map();
 const noopControl = { addEventListener: () => {} };
 const context = {
   document: {
     querySelectorAll: () => slides,
     querySelector: (selector) => selector === '.progress-bar' ? progress : noopControl,
     getElementById: () => status,
-    addEventListener: () => {},
+    addEventListener: (name, callback) => documentListeners.set(name, callback),
   },
   history: { replaceState: () => {} },
   location: { hash: '#1' },
@@ -69,15 +70,20 @@ context.location.hash = '#-99';
 assert.doesNotThrow(() => windowListeners.get('hashchange')(), 'malformed hashes must not crash navigation');
 assert.equal(slides.filter((slide) => slide.active).length, 1, 'navigation must leave exactly one active slide');
 
+const keydown = documentListeners.get('keydown');
+const buttonTarget = { closest: (selector) => selector === 'button, a' ? {} : null };
+keydown({ key: 'ArrowRight', target: buttonTarget, preventDefault: () => {} });
+assert.ok(slides[1].active, 'arrow navigation must work after a navigation button receives focus');
+keydown({ key: ' ', target: buttonTarget, preventDefault: () => assert.fail('native button activation must not be prevented') });
+assert.ok(slides[1].active, 'space on a button must be left to native activation');
+keydown({ key: 'End', target: buttonTarget, preventDefault: () => {} });
+assert.ok(slides[8].active, 'End must select the final slide');
+
 const mobileStart = deckHtml.indexOf('@media (max-width: 640px)');
 const mobileEnd = deckHtml.indexOf('@media (prefers-reduced-motion', mobileStart);
 const mobileCss = mobileStart >= 0 && mobileEnd > mobileStart ? deckHtml.slice(mobileStart, mobileEnd) : '';
-for (const selector of ['.position-strip', '.gtm-loop', '.ask-cards']) {
-  assert.ok(mobileCss.includes(selector), `mobile breakpoint must handle ${selector}`);
-}
-for (const selector of ['.step::after', '.gtm-node:not(:last-child)::after', '.qr-card']) {
-  assert.ok(mobileCss.includes(selector), `mobile breakpoint must neutralize desktop overflow for ${selector}`);
-}
+assert.ok(mobileCss.includes('.columns'), 'mobile layout must stack columns');
+assert.ok(deckHtml.includes('assets/demo.mp4'), 'deck must include the supplied demo');
 
 for (const filename of ['README.md', 'AGENTS.md', 'CLAUDE.md']) {
   const contents = await readFile(path.join(root, filename), 'utf8');

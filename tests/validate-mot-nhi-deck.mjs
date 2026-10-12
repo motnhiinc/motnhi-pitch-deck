@@ -12,9 +12,9 @@ const html = await readFile(deckPath, 'utf8');
 const productionOrigin = 'https://pitching.motnhi.vn';
 const canonicalUrl = `${productionOrigin}/`;
 const socialImageUrl = `${productionOrigin}/assets/mot-nhi-og.png`;
-const pageTitle = 'Mọt Nhí | Pre-Launch Pitch Deck for AR Reading App';
-const pageDescription = 'Explore the Mọt Nhí pre-launch pitch deck for an AR reading app that adds Vietnamese read-aloud and playful characters to paper books for ages 3–8.';
-const socialDescription = 'A pre-launch investor deck for Mọt Nhí, the AR reading app that turns paper books into shared Vietnamese storytime for ages 3–8.';
+const pageTitle = 'Mọt Nhí | Solana Mobile Pitch Deck';
+const pageDescription = 'Mọt Nhí brings paper books to life with AR and Vietnamese read-aloud for ages 3–8. A family reading use case for Solana Mobile.';
+const socialDescription = 'Vietnamese books, busy families, and a new everyday use case for Solana Mobile. Explore the Mọt Nhí demo and nine-slide pitch.';
 
 const localAssetReferences = [...html.matchAll(/\b(?:href|src)="([^"]+)"/g)]
   .map((match) => match[1])
@@ -52,23 +52,23 @@ for (const reference of new Set(localAssetReferences)) {
 }
 
 const slides = html.match(/<section\b[^>]*class="[^"]*\bslide\b[^"]*"/g) ?? [];
-assert.equal(slides.length, 10, 'deck must contain exactly 10 slides');
+assert.equal(slides.length, 9, 'deck must contain exactly 9 slides');
 assert.deepEqual(
   [...html.matchAll(/<section\b[^>]*class="[^"]*\bslide\b[^"]*"[^>]*data-slide="(\d+)"/g)].map((match) => Number(match[1])),
-  Array.from({ length: 10 }, (_, index) => index + 1),
+  Array.from({ length: 9 }, (_, index) => index + 1),
   'data-slide values must be consecutive',
 );
 assert.deepEqual(
-  [...html.matchAll(/<strong>(\d{2}) \/ 10<\/strong>/g)].map((match) => Number(match[1])),
-  Array.from({ length: 10 }, (_, index) => index + 1),
-  'visible slide counters must be consecutive and use the 10-slide total',
+  [...html.matchAll(/<strong>(\d{2}) \/ 9<\/strong>/g)].map((match) => Number(match[1])),
+  Array.from({ length: 9 }, (_, index) => index + 1),
+  'visible slide counters must be consecutive and use the 9-slide total',
 );
 
 const visibleText = html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ');
 for (const phrase of [
   'Mọt Nhí',
-  'Chạm vào trang sách, bước vào câu chuyện.',
-  'trẻ 3–8 tuổi',
+  'Solana Mobile',
+  'ages 3–8',
   'completed first story',
   '20 parent testers',
   'two pilot partners',
@@ -77,15 +77,15 @@ for (const phrase of [
 }
 
 assert.ok(!/Mermail/i.test(html), 'deck must not contain legacy Mermail content');
-assert.ok(html.includes('Pre-launch pitch deck'), 'cover must frame the asset as a pre-launch pitch deck');
+assert.ok(html.includes('Solana Mobile pitch deck'), 'cover must frame the asset as a pre-launch pitch deck');
 assert.ok(!/Partner &amp; investor deck/i.test(html), 'cover must not use ambiguous partner/investor framing');
-for (const section of ['Problem', 'Solution', 'Product demo', 'Differentiation', 'Market wedge', 'Business model', 'Go-to-market', 'Builder', 'Pilot ask']) {
+for (const section of ['Problem', 'Solution', 'Product demo', 'Solana Mobile', 'Market wedge', 'Business model', 'Pilot plan', 'Builder &amp; ask']) {
   assert.ok(html.includes(`>${section}<`), `missing investor-facing section label: ${section}`);
 }
 assert.ok(!html.includes('aria-label="Success metrics slide"'), 'removed validation-plan slide must stay absent');
 assert.ok(!html.includes('aria-label="Roadmap slide"'), 'removed milestones slide must stay absent');
-assert.ok(html.includes('>Slide 1 of 10<'), 'screen-reader fallback must use the 10-slide total');
-assert.equal((html.match(/src="assets\/logo-light\.png"/g) ?? []).length, 10, 'every slide must use logo-light.png');
+assert.ok(html.includes('>Slide 1 of 9<'), 'screen-reader fallback must use the 9-slide total');
+assert.equal((html.match(/src="assets\/logo-light\.png"/g) ?? []).length, 9, 'every slide must use logo-light.png');
 assert.ok(!html.includes('<use href="#mot-mark"'), 'legacy inline logo mark must not be used');
 assert.ok(html.includes('src="assets/toan.jpg"'), 'builder slide must use the supplied portrait');
 assert.ok(html.includes('src="assets/toan-linkedin-qr.png"'), 'builder slide must include the generated QR code');
@@ -133,7 +133,7 @@ for (const type of ['WebSite', 'WebPage', 'SoftwareApplication']) {
 const webPageNode = structuredData['@graph'].find((node) => node['@type'] === 'WebPage');
 assert.equal(webPageNode?.name, pageTitle, 'JSON-LD WebPage name must match the page title');
 assert.equal(webPageNode?.description, pageDescription, 'JSON-LD WebPage description must match the meta description');
-assert.equal(webPageNode?.dateModified, '2026-08-29', 'JSON-LD WebPage should expose the current deck modification date');
+assert.equal(webPageNode?.dateModified, '2026-10-12', 'JSON-LD WebPage should expose the current deck modification date');
 
 const socialImage = await readFile(path.resolve(deckDirectory, 'assets/mot-nhi-og.png'));
 assert.deepEqual(
